@@ -15,4 +15,5 @@ class Home extends Controller
 		echo "J'aime les patates";
 	}
 
+
 }
