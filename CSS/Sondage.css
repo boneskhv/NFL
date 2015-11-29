@@ -1,0 +1,143 @@
+html
+{
+    min-height: 100%;
+    height: 100%;
+}
+
+body
+{
+    Background-image: url("../img/wall.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+input[type="text"], input[type=email], input[type=password]
+{
+    color: black;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+.CreateAccount
+{
+    color: white;
+    text-align: center;
+}
+
+.CreateAccount:hover
+{
+    color: lightgrey;
+}
+
+.CreateAccount:visited
+{
+    color: white;
+}
+
+#SurveyTitle
+{
+    position: relative;
+    text-align: center;
+}
+
+.form-signin
+{
+    color: #ffffff;
+    background-color: rgba(192, 192, 192, 0.5);
+    margin: auto;
+    width: 40%;
+    margin-top: 10%;
+    border-radius: 13px;
+}
+
+.form-Account-Management
+{
+    color: #ffffff;
+    background-color: rgba(192, 192, 192, 0.5);
+    margin: auto;
+    width: 90%;
+    margin-top: 10%;
+    border-radius: 13px;
+}
+
+.Account-Management, .Account-Management:hover, .Account-Management:visited
+{
+    color: white;
+}
+
+.SondageCreateHome,.SondageAddQuestion
+{
+    color: #ffffff;
+    background-color: rgba(192, 192, 192, 0.5);
+    margin: auto;
+    width: 40%;
+    margin-top: 10%;
+    border-radius: 13px;
+}
+
+.WhiteHeader
+{
+    color: white;
+    font-size: xx-large;
+}
+
+.BlackText
+{
+    color: black;
+}
+
+.WhiteText
+{
+    color: White;
+}
+
+.Developpement
+{
+    color: black;
+    width: 90%;
+    height: 70px;
+}
+
+.wrapper
+{
+    color: #ffffff;
+    background-color: rgba(192, 192, 192, 0.5);
+    width: 60%;
+    margin: 7%;
+    //margin-top: 10%;
+    border-radius: 13px;
+    min-height: 400px;
+    display: table;
+}
+
+.container-fluid
+{
+    padding-bottom: 2cm;
+}
+
+.container-fluid > .sidebar-right {
+    float: right;
+    width: 220px;
+}
+
+.blog-sidebar
+{
+    position: relative;
+    left:45%;
+    margin-top: -30%;
+}
+
+
+/*
+-webkit-border-radius: 4px;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+*/

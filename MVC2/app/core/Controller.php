@@ -6,7 +6,7 @@ class Controller{
 		require_once '../app/models' . $model . '.php';
 	}
 
-	public static function view($view, $data = [])
+	public static function view($view)#, $data = [])
 	{
 		require_once '../app/views/' . $view . '.php';
 	}	
