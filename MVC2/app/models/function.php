@@ -1,14 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Baker
- * Date: 2015-10-28
- * Time: 13:33
- */
 
 
-Connect("a@a.a", "a");
-
+print_r($data);
 
 function SignOut()
 {
@@ -29,8 +22,8 @@ function Connect($email, $pw)
         $sel = "SELECT * FROM Account WHERE AccountEmail= :Email AND AccountPW= :PW";
         $req = $pdo->prepare($sel);
         var_dump($req);
-        $req->bindValue(":Email", $email, PDO::PARAM_STR);
-        $req->bindValue(":PW", ($pw));
+        $req->bindValue(":Email", $email);
+        $req->bindValue(":PW", md5($pw));
         $req->execute();
 
         $val = $req->fetchAll(PDO::FETCH_NUM);
@@ -65,7 +58,7 @@ function AdminHome()
         //print_r($values_from_db);
 
         $doc = new DOMDocument();
-        $doc->loadHTMLFile("AdminHome.php");
+        $doc->loadHTMLFile("../app/views/home/AdminHome.php");
 
         $i = 1;
         foreach ($values_from_db as $single_data) {
@@ -171,7 +164,7 @@ function appendAccount($doc, $name, $isAdmin, $i)
 function ClientHome()
 {
     $doc = new DOMDocument();
-    $doc->loadHTMLFile("ClientHome.php");
+    $doc->loadHTMLFile("../app/views/home/ClientHome.php");
 
     echo $doc->SaveHTML();
 }

@@ -17,10 +17,15 @@ class Home extends Controller
 
 	public function  HomeTP()
 	{
-        //include_once "C:/wamp/www/NFL/MVC2/app/models/function.php";
-        parent::model('/function');
-		//parent::view('home/index');#, ['name' => 'lol']);
-		//echo "J'aime les patates";
+        parent::model('BD');
+
+		$val = BD::Connect($_POST["Email"], $_POST["PW"]);
+
+		parent::model('LoadView');
+		if ($val == 1)
+			LoadView::AdminHome();
+		else if ($val == 0)
+			LoadView::ClientHome();
 	}
 
 

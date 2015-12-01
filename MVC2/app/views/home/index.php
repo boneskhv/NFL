@@ -12,10 +12,10 @@ echo '<script>lol()</script>';
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../../../CSS/Sondage.css" />
-    <link rel="stylesheet" href="../../../../bootstrap-3.3.5-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../CSS/Sondage.css" />
+    <link rel="stylesheet" href="../../../bootstrap-3.3.5-dist/css/bootstrap.css">
     <!--<link rel="stylesheet" href="bootstrap-3.3.5-dist\css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="../../../../bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../../../bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
     <!--<link rel="stylesheet" href="bootstrap-3.3.5-dist\css/bootstrap-theme.css">-->
 
     <title>Baker Survey</title>
