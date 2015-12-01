@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 class Home extends Controller
 {
@@ -19,13 +20,18 @@ class Home extends Controller
 	{
         parent::model('BD');
 
-		$val = BD::Connect($_POST["Email"], $_POST["PW"]);
+		$val = BD::Connect($_POST["email"], $_POST["pw"]);
+		print_r($val);
 
-		parent::model('LoadView');
-		if ($val == 1)
-			LoadView::AdminHome();
+		if ($val == 1) {
+			$_SESSION["Admin"] = $_POST["email"];
+			parent::view('home/AdminHome');
+		}
 		else if ($val == 0)
-			LoadView::ClientHome();
+		{
+			$_SESSION["Client"] = $_POST["email"];
+			parent::view('home/ClientHome');
+		}
 	}
 
 

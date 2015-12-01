@@ -27,9 +27,7 @@ class BD
             $val = $req->fetchAll(PDO::FETCH_NUM);
             $pdo = null;
 
-            $_SESSION["email"] = $email;
-
-            return $val[0][2] ;
+            return $val[0][2];
 
         } catch (PDOException $ex) {
             echo "Connection failed: " . $ex->getMessage();

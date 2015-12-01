@@ -1,7 +1,7 @@
 <?php
 //regarde si il c'est bien connecter
 session_start();
-if(!isset($_SESSION))
+if(!isset($_SESSION["Admin"]))
     header("location: ../index.php");
 ?>
 

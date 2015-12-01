@@ -12,15 +12,42 @@ echo '<script>lol()</script>';
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../../CSS/Sondage.css" />
-    <link rel="stylesheet" href="../../../bootstrap-3.3.5-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../CSS/Sondage.css" />
+    <link rel="stylesheet" href="../../bootstrap-3.3.5-dist/css/bootstrap.css">
     <!--<link rel="stylesheet" href="bootstrap-3.3.5-dist\css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="../../../bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../../bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
     <!--<link rel="stylesheet" href="bootstrap-3.3.5-dist\css/bootstrap-theme.css">-->
 
     <title>Baker Survey</title>
 </head>
 <body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right" action="/NFL/MVC2/public/index.php/home/HomeTP" method="post">>
+                <div class="form-group">
+                    <input type="email" id="inputEmail" placeholder="Email" class="form-control" required autofocus name="email">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="pw">
+                </div>
+                <button type="submit" class="btn btn-success">Sign in</button>
+            </form>
+        </div><!--/.navbar-collapse -->
+    </div>
+</div>
+
+<!--
 <div class="container">
     <form class="form-signin" action="/NFL/MVC2/public/index.php/home/HomeTP" method="post">
         <div>
@@ -37,9 +64,9 @@ echo '<script>lol()</script>';
                 </div>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
                 <!--<a class="CreateAccount" href="#">Create account</a>-->
-            </div>
+           <!-- </div>
         </div>
     </form>
-</div>
+</div>-->
 </body>
 </html>
