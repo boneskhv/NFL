@@ -5,7 +5,8 @@ function LoadHome()
     var tableScores = document.getElementById("Scores");
     var tableFutur = document.getElementById("Futur");
 
-    xmlhttp.open("POST", "../app/controllers/User.php/LoadHome", true);
+    //xmlhttp.open("POST", "../app/controllers/User.php/LoadHome", true);
+    xmlhttp.open("POST", "localhost/NFL//User.php/LoadHome", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("Action=LoadHome");
 

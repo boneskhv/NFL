@@ -6,7 +6,7 @@ class User extends Controller
 {
     public static function index()
     {
-        parent::view("Home");
+        parent::view("home/index");
     }
 
     public static function login()
