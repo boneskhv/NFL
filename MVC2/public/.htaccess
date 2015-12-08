@@ -1,10 +1,24 @@
-Options -MultiViews
-RewriteEngine On
+#Options -MultiViews
+#RewriteEngine On
 
 # À Arranger
+#RewriteBase /MVC2/public
+
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+
+#RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+
+
+
+RewriteEngine On
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+
 RewriteBase /MVC2/public
 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-
-RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+RewriteRule ^(.*) index.php?url=$1 [QSA,L]

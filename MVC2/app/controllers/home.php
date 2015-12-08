@@ -33,6 +33,4 @@ class Home extends Controller
 			parent::view('home/ClientHome');
 		}
 	}
-
-
 }
