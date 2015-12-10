@@ -1,7 +1,8 @@
 <?php
 
-
-print_r($data);
+error_reporting(E_ALL);
+//print_r($data);
+CreateAccount("michel@michel.com", "123", 0);
 
 function SignOut()
 {
@@ -175,7 +176,7 @@ function CreateAccount($email, $pw, $isAdmin)
 
 // Connexion
     try {
-        $pdo = new PDO('sqlite:bd.Account');
+        $pdo = new PDO('sqlite:NFL.db');
     } catch (PDOException $e) {
         echo 'Connection failed: ' . $e->getMessage();
     }
@@ -200,7 +201,8 @@ function CreateAccount($email, $pw, $isAdmin)
         // Execute la requ�te
         $requete->execute();
 
-        AdminHome();
+        print_r("top kek");
+        //AdminHome();
 
     } catch (PDOException $e) {
         echo 'Insertion failed: ' . $e->getMessage();

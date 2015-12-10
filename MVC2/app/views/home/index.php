@@ -33,7 +33,7 @@
             <a class="navbar-brand tabIt" href="#" style="margin-left: 100px">Baker NFL</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right" action="/NFL/MVC2/public/index.php/home/HomeTP" method="post">>
+            <form class="navbar-form navbar-right" action="/NFL/MVC2/app/models/function.php" method="post">
                 <div class="form-group">
                     <input type="email" id="inputEmail" placeholder="Email" class="form-control" required autofocus
                            name="email">
@@ -62,3 +62,5 @@
 
 </body>
 </html>
+
+<!--public/index.php/home/HomeTP
