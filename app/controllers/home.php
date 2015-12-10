@@ -30,7 +30,7 @@ class Home extends Controller
 		else if ($val == 0)
 		{
 			$_SESSION["Client"] = $_POST["email"];
-			parent::view('home/ClientHome');
+			parent::view('ClientHome');
 		}
 	}
 }

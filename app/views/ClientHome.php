@@ -1,8 +1,8 @@
 <?php
 session_start();
 //regarde si il c'est bien connecter
-if(!isset($_SESSION["Client"]))
-    header("location: ../index.php");
+if(!isset($_SESSION["client"]))
+    header("location: index.php");
 
 ?>
 
@@ -12,9 +12,9 @@ if(!isset($_SESSION["Client"]))
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../../CSS/Sondage.css"/>
-    <link rel="stylesheet" href="../../../../../bootstrap-3.3.5-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../../CSS/bootstrap-3.3.5-dist/css/bootstrap.css">
     <!--<link rel="stylesheet" href="bootstrap-3.3.5-dist\css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="../../../../../bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../../../../CSS/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
     <!--<link rel="stylesheet" href="bootstrap-3.3.5-dist\css/bootstrap-theme.css">-->
     <link href="data:text/css;charset=utf-8," data-href="../dist/css/bootstrap-theme.min.css" rel="stylesheet"
           id="bs-theme-stylesheet">

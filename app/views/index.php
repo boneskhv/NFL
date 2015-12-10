@@ -6,13 +6,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/NFL/MVC2/public/CSS/Sondage.css"/>
-    <link rel="stylesheet" href="/NFL/MVC2/public/CSS/bootstrap-3.3.5-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/CSS/Sondage.css"/>
+    <link rel="stylesheet" href="/CSS/bootstrap-3.3.5-dist/css/bootstrap.css">
     <!--<link rel="stylesheet" href="bootstrap-3.3.5-dist\css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="/NFL/MVC2/public/CSS/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/CSS/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
     <!--<link rel="stylesheet" href="bootstrap-3.3.5-dist\css/bootstrap-theme.css">-->
-    <script src="/NFL/MVC2/public/JS/function.js"></script>
+    <script src="/JS/function.js"></script>
 
     <title>Baker Survey</title>
 </head>
@@ -33,14 +32,15 @@
             <a class="navbar-brand tabIt" href="#" style="margin-left: 100px">Baker NFL</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right" action="/NFL/MVC2/app/models/function.php" method="post">
+            <!-- action="app/models/function.php" -->
+            <form class="navbar-form navbar-right" action="/User/login" method="post">
                 <div class="form-group">
                     <input type="email" id="inputEmail" placeholder="Email" class="form-control" required autofocus
                            name="email">
                 </div>
                 <div class="form-group">
                     <input type="password" id="inputPassword" class="form-control" placeholder="Password" required
-                           name="pw">
+                           name="password">
                 </div>
                 <button type="submit" class="btn btn-success">Sign in</button>
             </form>
@@ -55,7 +55,7 @@
         <h2>Scores</h2>
         <table id="Scores"></table>
         <h2>Futur games</h2>
-        <table id="Futur"></table>
+        <table id="Future"></table>
     </div>
 </div>
 

@@ -19,6 +19,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-l
 
-RewriteBase /NFL/public
+#RewriteBase /1229753/public
 
 RewriteRule ^(.*) index.php?url=$1 [QSA,L]

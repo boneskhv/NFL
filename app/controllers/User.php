@@ -6,14 +6,14 @@ class User extends Controller
 {
     public static function index()
     {
-        parent::view("home/index");
+        parent::view("index");
     }
 
     public static function login()
     {
         parent::model("BD");
 
-        $value = BD::login($_POST["email"], $_POST["password"]);
+        $value = BD::Connect($_POST["email"], $_POST["password"]);
 
         if($value == 1)
         {
@@ -25,15 +25,30 @@ class User extends Controller
             $_SESSION["client"] = $_POST["email"];
             parent::view("ClientHome");
         }
+        elseif($value == -1)
+        {
+            parent::view("index");
+        }
     }
 
 
-    public static function LoadHome()
+    public static function LoadScore()
     {
         if($_POST["Action"] == "LoadHome")
         {
             parent::model("BD");
-            echo BD::LoadHome();
+            $Score = BD::LoadScore();
+            echo json_encode($Score);
+        }
+    }
+
+    public static function LoadFuture()
+    {
+        if($_POST["Action"] == "LoadHome")
+        {
+            parent::model("BD");
+            $Future = BD::LoadFuture();
+            echo json_encode($Future);
         }
     }
 
