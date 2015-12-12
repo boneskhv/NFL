@@ -37,6 +37,29 @@ class BD
         }
     }
 
+    public static function LoadAccount()
+    {
+        try {
+            $pdo = new PDO('sqlite:../app/models/NFL.db');
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
+
+        try {
+            $sel = "SELECT AccountEmail FROM Account WHERE AccountisAdmin= 0";
+            $req = $pdo->prepare($sel);
+            $req->execute();
+
+            $val = $req->fetchAll(PDO::FETCH_COLUMN);
+            $pdo = null;
+
+            return $val;
+
+        } catch (PDOException $ex) {
+            echo "Connection failed: " . $ex->getMessage();
+        }
+    }
+
     //recupere les scores de la BD
     public static function LoadScore()
     {
@@ -133,5 +156,34 @@ class BD
         }
 
         return $valFuture;
+    }
+
+    public static function AddAccount($email, $pw, $nbToken)
+    {
+
+        // Connexion
+        try {
+            $pdo = new PDO('sqlite:../app/models/NFL.db');
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
+        /**************************************
+         * Création des tables                       *
+         **************************************/
+        try {
+            $insert = "INSERT INTO Account (AccountEmail, AccountPW, AccountisAdmin, AccountToken) VALUES (:email, :pw, 0, :nbToken)";
+            $req = $pdo->prepare($insert);
+            $req->bindValue(':email', $email);
+            $req->bindValue(':pw', md5($pw));
+            $req->bindValue(':nbToken', $nbToken);
+
+            $req->execute();
+
+        } catch (PDOException $e) {
+            echo 'Insertion failed: ' . $e->getMessage();
+        }
+
+        // ferme la requête
+        $pdo = null;
     }
 }
