@@ -6,9 +6,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Admin.php" afterPath="$PROJECT_DIR$/app/controllers/Admin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/AdminHome.php" afterPath="$PROJECT_DIR$/app/views/AdminHome.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/BD.php" afterPath="$PROJECT_DIR$/app/models/BD.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ClientHome.php" afterPath="$PROJECT_DIR$/app/views/ClientHome.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/JS/function.js" afterPath="$PROJECT_DIR$/public/JS/function.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.php" afterPath="$PROJECT_DIR$/app/views/index.php" />
     </list>
     <ignored path="NFL.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,36 +31,40 @@
       <file leaf-file-name="AdminHome.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/AdminHome.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.3461537">
-              <caret line="56" column="46" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="46" />
+            <state vertical-scroll-proportion="-8.653846">
+              <caret line="58" column="106" selection-start-line="58" selection-start-column="106" selection-end-line="58" selection-end-column="106" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="function.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="function.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/JS/function.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="255" column="27" selection-start-line="255" selection-start-column="27" selection-end-line="255" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.7616">
+              <caret line="297" column="22" selection-start-line="297" selection-start-column="22" selection-end-line="297" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BD.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BD.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/BD.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5175292">
-              <caret line="173" column="87" selection-start-line="173" selection-start-column="87" selection-end-line="173" selection-end-column="87" />
+            <state vertical-scroll-proportion="-13.230769">
+              <caret line="224" column="27" selection-start-line="224" selection-start-column="27" selection-end-line="224" selection-end-column="27" />
               <folding>
-                <marker date="1449958323716" expanded="true" signature="448:515" placeholder="SELECT * FRO..Account..." />
-                <marker date="1449958323716" expanded="true" signature="1213:1269" placeholder="SELECT Accou..Account..." />
-                <marker date="1449958323716" expanded="true" signature="1855:1875" placeholder="SELECT * FRO..scores..." />
-                <marker date="1449958323716" expanded="true" signature="2439:2460" placeholder="SELECT * FRO..futures..." />
-                <marker date="1449958323716" expanded="true" signature="3030:3051" placeholder="SELECT * FRO..futures..." />
-                <marker date="1449958323716" expanded="true" signature="3622:3643" placeholder="SELECT * FRO..futures..." />
-                <marker date="1449958323716" expanded="true" signature="4403:4512" placeholder="INSERT INTO ..." />
+                <marker date="1449962365945" expanded="true" signature="448:515" placeholder="SELECT * FRO..Account..." />
+                <marker date="1449962365945" expanded="true" signature="1214:1270" placeholder="SELECT Accou..Account..." />
+                <marker date="1449962365945" expanded="true" signature="1856:1876" placeholder="SELECT * FRO..scores..." />
+                <marker date="1449962365945" expanded="true" signature="2440:2461" placeholder="SELECT * FRO..futures..." />
+                <marker date="1449962365945" expanded="true" signature="3032:3053" placeholder="SELECT * FRO..futures..." />
+                <marker date="1449962365945" expanded="true" signature="3625:3646" placeholder="SELECT * FRO..futures..." />
+                <marker date="1449962365945" expanded="true" signature="4407:4516" placeholder="INSERT INTO ..." />
+                <marker date="1449962365945" expanded="true" signature="5166:5214" placeholder="DELETE FROM ..." />
+                <marker date="1449962365945" expanded="true" signature="5777:5860" placeholder="UPDATE Accou..." />
+                <marker date="1449962365945" expanded="true" signature="6104:6165" placeholder="UPDATE Accou..." />
+                <marker date="1449962365945" expanded="true" signature="6359:6426" placeholder="UPDATE Accou..." />
               </folding>
             </state>
           </provider>
@@ -71,8 +73,8 @@
       <file leaf-file-name="Admin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/Admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.384615">
-              <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+            <state vertical-scroll-proportion="-11.923077">
+              <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -125,9 +127,9 @@
         <option value="$PROJECT_DIR$/app/views/index.php" />
         <option value="$PROJECT_DIR$/app/views/ClientHome.php" />
         <option value="$PROJECT_DIR$/app/views/AdminHome.php" />
-        <option value="$PROJECT_DIR$/public/JS/function.js" />
         <option value="$PROJECT_DIR$/app/controllers/Admin.php" />
         <option value="$PROJECT_DIR$/app/models/BD.php" />
+        <option value="$PROJECT_DIR$/public/JS/function.js" />
       </list>
     </option>
   </component>
@@ -491,43 +493,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/BD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.230769">
+          <caret line="224" column="27" selection-start-line="224" selection-start-column="27" selection-end-line="224" selection-end-column="27" />
+          <folding>
+            <marker date="1449962365945" expanded="true" signature="448:515" placeholder="SELECT * FRO..Account..." />
+            <marker date="1449962365945" expanded="true" signature="1214:1270" placeholder="SELECT Accou..Account..." />
+            <marker date="1449962365945" expanded="true" signature="1856:1876" placeholder="SELECT * FRO..scores..." />
+            <marker date="1449962365945" expanded="true" signature="2440:2461" placeholder="SELECT * FRO..futures..." />
+            <marker date="1449962365945" expanded="true" signature="3032:3053" placeholder="SELECT * FRO..futures..." />
+            <marker date="1449962365945" expanded="true" signature="3625:3646" placeholder="SELECT * FRO..futures..." />
+            <marker date="1449962365945" expanded="true" signature="4407:4516" placeholder="INSERT INTO ..." />
+            <marker date="1449962365945" expanded="true" signature="5166:5214" placeholder="DELETE FROM ..." />
+            <marker date="1449962365945" expanded="true" signature="5777:5860" placeholder="UPDATE Accou..." />
+            <marker date="1449962365945" expanded="true" signature="6104:6165" placeholder="UPDATE Accou..." />
+            <marker date="1449962365945" expanded="true" signature="6359:6426" placeholder="UPDATE Accou..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.923077">
+          <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/AdminHome.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.3461537">
-          <caret line="56" column="46" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="46" />
+        <state vertical-scroll-proportion="-8.653846">
+          <caret line="58" column="106" selection-start-line="58" selection-start-column="106" selection-end-line="58" selection-end-column="106" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/JS/function.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="255" column="27" selection-start-line="255" selection-start-column="27" selection-end-line="255" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.7616">
+          <caret line="297" column="22" selection-start-line="297" selection-start-column="22" selection-end-line="297" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.384615">
-          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/BD.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5175292">
-          <caret line="173" column="87" selection-start-line="173" selection-start-column="87" selection-end-line="173" selection-end-column="87" />
-          <folding>
-            <marker date="1449958323716" expanded="true" signature="448:515" placeholder="SELECT * FRO..Account..." />
-            <marker date="1449958323716" expanded="true" signature="1213:1269" placeholder="SELECT Accou..Account..." />
-            <marker date="1449958323716" expanded="true" signature="1855:1875" placeholder="SELECT * FRO..scores..." />
-            <marker date="1449958323716" expanded="true" signature="2439:2460" placeholder="SELECT * FRO..futures..." />
-            <marker date="1449958323716" expanded="true" signature="3030:3051" placeholder="SELECT * FRO..futures..." />
-            <marker date="1449958323716" expanded="true" signature="3622:3643" placeholder="SELECT * FRO..futures..." />
-            <marker date="1449958323716" expanded="true" signature="4403:4512" placeholder="INSERT INTO ..." />
-          </folding>
         </state>
       </provider>
     </entry>

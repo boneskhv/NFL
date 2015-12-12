@@ -56,7 +56,7 @@ if (!isset($_SESSION["admin"]))
         <div id="add"><!--action="/Admin/AddAccount" method="post"-->
             <input type="email" id="inputEmail" class="" placeholder="Email address" required autofocus name="email">
             <input type="password" id="inputPassword" class="" placeholder="Password" required name="pw">
-            <input type="number" id="inputToken" class="BlackText" placeholder="number of token" required name="token">
+            <input type="number" id="inputToken" class="BlackText" placeholder="number of token" value="20" min="20" required name="token">
             <a class="Account-Management" href="#" onclick="AdminAddAccount()">
                 <!--<span class="glyphicon glyphicon-floppy-disk"aria-hidden="true"></span>-->
                 <input type="image" class="glyphicon glyphicon-floppy-disk" aria-hidden="true"/>

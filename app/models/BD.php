@@ -27,7 +27,7 @@ class BD
             $val = $req->fetchAll();
             $pdo = null;
 
-            if($val[0][2] == NULL)
+            if ($val[0][2] == NULL)
                 return -1;
 
             return $val[0][2];
@@ -99,7 +99,7 @@ class BD
             $req = $pdo->prepare($sel);
             $req->execute();
 
-            $valFuture = $req->fetchAll(PDO::FETCH_COLUMN,0);
+            $valFuture = $req->fetchAll(PDO::FETCH_COLUMN, 0);
 
             $pdo = null;
 
@@ -123,7 +123,7 @@ class BD
             $req = $pdo->prepare($sel);
             $req->execute();
 
-            $valFuture = $req->fetchAll(PDO::FETCH_COLUMN,1);
+            $valFuture = $req->fetchAll(PDO::FETCH_COLUMN, 1);
 
             $pdo = null;
 
@@ -147,7 +147,7 @@ class BD
             $req = $pdo->prepare($sel);
             $req->execute();
 
-            $valFuture = $req->fetchAll(PDO::FETCH_COLUMN,2);
+            $valFuture = $req->fetchAll(PDO::FETCH_COLUMN, 2);
 
             $pdo = null;
 
@@ -184,6 +184,60 @@ class BD
         }
 
         // ferme la requête
+        $pdo = null;
+    }
+
+    public static function DeleteAccount($email)
+    {
+        try {
+            $pdo = new PDO('sqlite:../app/models/NFL.db');
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
+
+        try {
+            $del = "DELETE FROM Account WHERE (AccountEmail= :email)";
+            $req = $pdo->prepare($del);
+            $req->bindValue(':email', $email);
+            $req->execute();
+
+        } catch (PDOException $e) {
+            echo 'delete failed: ' . $e->getMessage();
+        }
+
+        $pdo = null;
+    }
+
+    public static function ModifyAccount($email, $pw, $token)
+    {
+        try {
+            $pdo = new PDO('sqlite:../app/models/NFL.db');
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
+
+        if ($pw != " " && $token != " ") {
+            $update = "UPDATE Account SET AccountPW= :pw, AccountToken= :token WHERE AccountEmail = :email";
+            $req = $pdo->prepare($update);
+            $req->bindValue(":email", $email);
+            $req->bindValue("pw", md5($pw));
+            $req->bindValue(":token", $token);
+        } else if ($token == " ") {
+            $update = "UPDATE Account SET AccountPW= :pw WHERE AccountEmail = :email";
+            $req = $pdo->prepare($update);
+            $req->bindValue(":email", $email);
+            $req->bindValue("pw", md5($pw));
+        } else if ($pw == " ") {
+            $update = "UPDATE Account SET AccountToken= :token WHERE AccountEmail = :email";
+            $req = $pdo->prepare($update);
+            $req->bindValue(":email", $email);
+            $req->bindValue(":token", $token);
+        }
+
+        $req->execute();
+
+        AdminHome();
+
         $pdo = null;
     }
 }

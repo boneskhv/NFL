@@ -34,7 +34,20 @@ class Admin extends Controller
     {
         if(isset($_POST["data"]))
         {
+            parent::model("BD");
+            $data = explode(';', $_POST["data"]);
+            BD::ModifyAccount($data[0], $data[1], $data[2]);
+            echo($data[0] . " was modified");
+        }
+    }
 
+    public static function DeleteAccount()
+    {
+        if(isset($_POST["data"]))
+        {
+            parent::model("BD");
+            BD::DeleteAccount($_POST["data"]);
+            echo($_POST["data"] . " account was terminated");
         }
     }
 
