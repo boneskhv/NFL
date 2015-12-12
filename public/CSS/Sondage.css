@@ -102,6 +102,11 @@ ul
     color: White;
 }
 
+.WhiteLink, .WhiteLink:hover
+{
+    color: White;
+}
+
 .Developpement
 {
     color: black;

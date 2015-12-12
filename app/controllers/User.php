@@ -42,12 +42,32 @@ class User extends Controller
         }
     }
 
-    public static function LoadFuture()
+    public static function LoadFutureHome()
     {
         if($_POST["Action"] == "LoadHome")
         {
             parent::model("BD");
-            $Future = BD::LoadFuture();
+            $Future = BD::LoadFutureHome();
+            echo json_encode($Future);
+        }
+    }
+
+    public static function LoadFutureVisitor()
+    {
+        if($_POST["Action"] == "LoadHome")
+        {
+            parent::model("BD");
+            $Future = BD::LoadFutureVisitor();
+            echo json_encode($Future);
+        }
+    }
+
+    public static function LoadFutureLocation()
+    {
+        if($_POST["Action"] == "LoadHome")
+        {
+            parent::model("BD");
+            $Future = BD::LoadFutureLocation();
             echo json_encode($Future);
         }
     }

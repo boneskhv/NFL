@@ -52,9 +52,9 @@
 
 <div class="container CenterInfo">
     <div class="panel-body">
-        <h2>Scores</h2>
+        <a class="WhiteLink" onclick="ShowHide('Scores')"><h2>Scores</h2></a>
         <table id="Scores"></table>
-        <h2>Futur games</h2>
+        <a class="WhiteLink" onclick="ShowHide('Future')"><h2>Future games</h2></a>
         <table id="Future"></table>
     </div>
 </div>

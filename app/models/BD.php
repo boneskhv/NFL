@@ -8,6 +8,7 @@
  */
 class BD
 {
+    //Regarde si le compte existe dans la BD et si c'est un admin ou un client
     public static function Connect($email, $pw)
     {
         try {
@@ -36,6 +37,7 @@ class BD
         }
     }
 
+    //recupere les scores de la BD
     public static function LoadScore()
     {
         try {
@@ -49,7 +51,7 @@ class BD
             $req = $pdo->prepare($sel);
             $req->execute();
 
-            $valScore = $req->fetchAll();
+            $valScore = $req->fetchAll(PDO::FETCH_COLUMN);
 
             $pdo = null;
 
@@ -61,7 +63,7 @@ class BD
 
     }
 
-    public static function LoadFuture()
+    public static function LoadFutureHome()
     {
         try {
             $pdo = new PDO('sqlite:../app/models/NFL.db');
@@ -74,13 +76,62 @@ class BD
             $req = $pdo->prepare($sel);
             $req->execute();
 
-            $valFuture = $req->fetchAll();
+            $valFuture = $req->fetchAll(PDO::FETCH_COLUMN,0);
 
             $pdo = null;
 
         } catch (PDOException $ex) {
             echo "Connection failed: " . $ex->getMessage();
         }
+
+        return $valFuture;
+    }
+
+    public static function LoadFutureVisitor()
+    {
+        try {
+            $pdo = new PDO('sqlite:../app/models/NFL.db');
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
+
+        try {
+            $sel = "SELECT * FROM futures";
+            $req = $pdo->prepare($sel);
+            $req->execute();
+
+            $valFuture = $req->fetchAll(PDO::FETCH_COLUMN,1);
+
+            $pdo = null;
+
+        } catch (PDOException $ex) {
+            echo "Connection failed: " . $ex->getMessage();
+        }
+
+        return $valFuture;
+    }
+
+    public static function LoadFutureLocation()
+    {
+        try {
+            $pdo = new PDO('sqlite:../app/models/NFL.db');
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
+
+        try {
+            $sel = "SELECT * FROM futures";
+            $req = $pdo->prepare($sel);
+            $req->execute();
+
+            $valFuture = $req->fetchAll(PDO::FETCH_COLUMN,2);
+
+            $pdo = null;
+
+        } catch (PDOException $ex) {
+            echo "Connection failed: " . $ex->getMessage();
+        }
+
         return $valFuture;
     }
 }
