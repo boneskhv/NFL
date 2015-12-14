@@ -9,6 +9,7 @@ def ParseStanding():
 
     print(html)
 
+    #bd = sqlite3.connect("../app/models/NFL.db")
     bd = sqlite3.connect("NFL.db")
 
     bd.execute("drop table if exists standings")
@@ -51,6 +52,7 @@ def ParseStanding():
 
 
 def BDStanding(team, pct, pf, pa):
+    #bd = sqlite3.connect("../app/models/NFL.db")
     bd = sqlite3.connect("NFL.db")
 
     bd.execute("INSERT INTO standings VALUES (?,?,?,?)",(team, pct, pf, pa))
@@ -61,6 +63,7 @@ def BDStanding(team, pct, pf, pa):
 
 
 def ParseScore():
+    #bd = sqlite3.connect("../app/models/NFL.db")
     bd = sqlite3.connect("NFL.db")
 
     bd.execute("drop table if exists scores")
@@ -71,7 +74,7 @@ def ParseScore():
 
     week = datetime.date.today().isocalendar()[1] - datetime.date(2015,9,3).isocalendar()[1]
 
-    for i in range(1, week):
+    for i in range(1, week -1):
         response = urllib.request.urlopen('http://espn.go.com/nfl/schedule/_/week/' + str(i))
         print('http://espn.go.com/nfl/schedule/_/week/' + str(i))
         html = response.read()
@@ -111,6 +114,7 @@ def ParseScore():
 
 
 def BDScore(score):
+    #bd = sqlite3.connect("../app/models/NFL.db")
     bd = sqlite3.connect("NFL.db")
 
     print(score)
@@ -120,6 +124,7 @@ def BDScore(score):
 
 
 def ParseFutur():
+    #bd = sqlite3.connect("../app/models/NFL.db")
     bd = sqlite3.connect("NFL.db")
 
     bd.execute("drop table if exists futures")
@@ -168,6 +173,7 @@ def ParseFutur():
     bd.close()
 
 def BDFutur(home, visitor, location):
+    #bd = sqlite3.connect("../app/models/NFL.db")
     bd = sqlite3.connect("NFL.db")
 
     print(home, visitor, location)

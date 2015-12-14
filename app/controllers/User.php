@@ -72,4 +72,13 @@ class User extends Controller
         }
     }
 
+    public static function UpdatePython()
+    {
+        if($_POST["Action"] == "updatePython")
+        {
+            parent::model("BD");
+            BD::UpdatePython();
+        }
+    }
+
 }

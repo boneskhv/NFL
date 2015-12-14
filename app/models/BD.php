@@ -240,4 +240,9 @@ class BD
 
         $pdo = null;
     }
+
+    public static function UpdatePython()
+    {
+        exec('C:\Python34\python.exe ../app/models/parser.py 2>&1');
+    }
 }

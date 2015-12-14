@@ -78,6 +78,8 @@ function FillScore(data) {
     var tableScores = document.getElementById("Scores");
     var parsedData = data.split('\"');
 
+    tableScores.innerHTML = "";
+
     for (i = 1; i < parsedData.length - 1; i++) {
         if (i % 2 == 0)
             var content = parsedData[i].replace(',', '');
@@ -98,6 +100,8 @@ function FillScore(data) {
 function FillFutureHome(data) {
     var tableScores = document.getElementById("Future");
     var parsedData = data.split('\"');
+
+    tableScores.innerHTML = "";
 
     for (i = 1; i < parsedData.length - 1; i++) {
         var content = parsedData[i].replace(',', '');
@@ -344,4 +348,21 @@ function AdminAddAccount() {
     name.innerHTML = "";
 
     LoadAccount();
+}
+
+function UpdatePython()
+{
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.open("POST", "/User/UpdatePython", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("Action=" + "updatePython");
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var Result = xmlhttp.responseText;
+            alert("Requete completed");
+            LoadHome();
+        }
+    }
 }

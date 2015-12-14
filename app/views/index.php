@@ -49,9 +49,9 @@
     </div>
 </div>
 
-
 <div class="container CenterInfo">
     <div class="panel-body">
+        <button class="BlackText" onclick="UpdatePython()">Refresh data</button>
         <a class="WhiteLink" onclick="ShowHide('Scores')"><h2>Scores</h2></a>
         <table id="Scores"></table>
         <a class="WhiteLink" onclick="ShowHide('Future')"><h2>Future games</h2></a>
@@ -61,5 +61,3 @@
 
 </body>
 </html>
-
-<!--public/index.php/home/HomeTP
