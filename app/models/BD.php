@@ -236,13 +236,84 @@ class BD
 
         $req->execute();
 
-        AdminHome();
-
         $pdo = null;
     }
 
     public static function UpdatePython()
     {
         exec('C:\Python34\python.exe ../app/models/parser.py 2>&1');
+    }
+
+    public static function TeamAPI()
+    {
+        try {
+            $pdo = new PDO('sqlite:../app/models/NFL.db');
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
+
+        try {
+            $sel = "SELECT * FROM standings";
+            $req = $pdo->prepare($sel);
+            $req->execute();
+
+            $result = $req->fetchAll(PDO::FETCH_ASSOC);
+
+            $pdo = null;
+
+        } catch (PDOException $ex) {
+            echo "Connection failed: " . $ex->getMessage();
+        }
+
+        return $result;
+    }
+
+    public static function GamesAPI()
+    {
+        try {
+            $pdo = new PDO('sqlite:../app/models/NFL.db');
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
+
+        try {
+            $sel = "SELECT * FROM futures";
+            $req = $pdo->prepare($sel);
+            $req->execute();
+
+            $result = $req->fetchAll(PDO::FETCH_ASSOC);
+
+            $pdo = null;
+
+        } catch (PDOException $ex) {
+            echo "Connection failed: " . $ex->getMessage();
+        }
+
+        return $result;
+    }
+
+    public static function BetAPI($id)
+    {
+        try {
+            $pdo = new PDO('sqlite:../app/models/NFL.db');
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
+
+        try {
+            $sel = "SELECT * FROM Bet WHERE Game = :id";
+            $req = $pdo->prepare($sel);
+            $req->bindValue(":id", $id);
+            $req->execute();
+
+            $result = $req->fetchAll(PDO::FETCH_ASSOC);
+
+            $pdo = null;
+
+        } catch (PDOException $ex) {
+            echo "Connection failed: " . $ex->getMessage();
+        }
+
+        return $result;
     }
 }

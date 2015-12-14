@@ -13,24 +13,22 @@
     <!--<link rel="stylesheet" href="bootstrap-3.3.5-dist\css/bootstrap-theme.css">-->
     <script src="/JS/function.js"></script>
 
-    <title>Baker Survey</title>
+    <title>Baker NFL</title>
 </head>
 <body onload="LoadHome()">
 
 <div class="navbar navbar-inverse navbar-fixed-top">
-    <a target="_blank" href="https://github.com/dragonmost/NFL" ><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
+    <a target="_blank" href="https://github.com/dragonmost/NFL"><img
+            style="position: absolute; top: 0; left: 0; border: 0;"
+            src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67"
+            alt="Fork me on GitHub"
+            data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
 
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand tabIt" href="#" style="margin-left: 100px">Baker NFL</a>
-        </div>
+            <div class="navbar-header">
+                <a class="navbar-brand tabIt" href="#" style="margin-left: 100px">Baker NFL</a>
+                <a class="navbar-brand" href="/User/LoadAPIPage" type="submit">API</a>
+            </div>
         <div id="navbar" class="navbar-collapse collapse">
             <!-- action="app/models/function.php" -->
             <form class="navbar-form navbar-right" action="/User/login" method="post">

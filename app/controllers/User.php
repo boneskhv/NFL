@@ -81,4 +81,9 @@ class User extends Controller
         }
     }
 
+    public static function LoadAPIPage()
+    {
+        parent::view("APIPage");
+    }
+
 }

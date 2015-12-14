@@ -1,8 +1,7 @@
 <?php
 //regarde si il c'est bien connecter
 session_start();
-if (!isset($_SESSION["admin"]))
-    header("location: index.php");
+
 ?>
 
 <html>
@@ -21,7 +20,7 @@ if (!isset($_SESSION["admin"]))
     <title>NFL</title>
 
 </head>
-<body onload="LoadAccount()">
+<body onload="LoadAPITeam()">
 <div>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -50,17 +49,15 @@ if (!isset($_SESSION["admin"]))
 
     <div class="panel-body form-Account-Management">
 
-        <h2 class="form-signin-heading">Accounts</h2>
+        <h2 class="form-signin-heading">API</h2>
 
-        <h3 class="form-signin-heading">Add an accounts</h3>
-        <div id="add"><!--action="/Admin/AddAccount" method="post"-->
-            <input type="email" id="inputEmail" class="" placeholder="Email address" required autofocus name="email">
-            <input type="password" id="inputPassword" class="" placeholder="Password" required name="pw">
-            <input type="number" id="inputToken" class="BlackText" placeholder="number of token" value="20" min="20" required name="token">
-            <a class="Account-Management" href="#" onclick="AdminAddAccount()">
-                <!--<span class="glyphicon glyphicon-floppy-disk"aria-hidden="true"></span>-->
-                <input type="image" class="glyphicon glyphicon-floppy-disk" aria-hidden="true"/>
-            </a>
+        <div class="panel-body">
+            <h3>Team <a class="WhiteLink" href="#" onclick="ShowHide('Team')"><span class="glyphicon glyphicon-eye-open"aria-hidden="true"></span></a></h3>
+            <p class="" id="Team" style="display: none"></p>
+            <h3>Games <a class="WhiteLink" href="#" onclick="ShowHide('Games')"><span class="glyphicon glyphicon-eye-open"aria-hidden="true"></span></a></h3>
+            <p id="Games" style="display: none"></p>
+            <h3>Gains <a class="WhiteLink" href="#" onclick="ShowHide('Gains')"><span class="glyphicon glyphicon-eye-open"aria-hidden="true"></span></a></h3>
+            <p id="Gains" style="display: none"></p>
         </div>
 
         <h3 class="form-signin-heading">List of accounts</h3>

@@ -9,8 +9,8 @@ def ParseStanding():
 
     print(html)
 
-    #bd = sqlite3.connect("../app/models/NFL.db")
-    bd = sqlite3.connect("NFL.db")
+    bd = sqlite3.connect("../app/models/NFL.db")
+    #bd = sqlite3.connect("NFL.db")
 
     bd.execute("drop table if exists standings")
     bd.commit()
@@ -52,8 +52,8 @@ def ParseStanding():
 
 
 def BDStanding(team, pct, pf, pa):
-    #bd = sqlite3.connect("../app/models/NFL.db")
-    bd = sqlite3.connect("NFL.db")
+    bd = sqlite3.connect("../app/models/NFL.db")
+    #bd = sqlite3.connect("NFL.db")
 
     bd.execute("INSERT INTO standings VALUES (?,?,?,?)",(team, pct, pf, pa))
     bd.commit()
@@ -63,8 +63,8 @@ def BDStanding(team, pct, pf, pa):
 
 
 def ParseScore():
-    #bd = sqlite3.connect("../app/models/NFL.db")
-    bd = sqlite3.connect("NFL.db")
+    bd = sqlite3.connect("../app/models/NFL.db")
+    #bd = sqlite3.connect("NFL.db")
 
     bd.execute("drop table if exists scores")
     bd.commit()
@@ -114,8 +114,8 @@ def ParseScore():
 
 
 def BDScore(score):
-    #bd = sqlite3.connect("../app/models/NFL.db")
-    bd = sqlite3.connect("NFL.db")
+    bd = sqlite3.connect("../app/models/NFL.db")
+    #bd = sqlite3.connect("NFL.db")
 
     print(score)
     bd.execute("INSERT INTO scores VALUES (?)",(score,))
@@ -124,16 +124,17 @@ def BDScore(score):
 
 
 def ParseFutur():
-    #bd = sqlite3.connect("../app/models/NFL.db")
-    bd = sqlite3.connect("NFL.db")
+    bd = sqlite3.connect("../app/models/NFL.db")
+    #bd = sqlite3.connect("NFL.db")
 
     bd.execute("drop table if exists futures")
     bd.commit()
 
-    bd.execute('CREATE TABLE futures(home, visitor, location)')
+    bd.execute('CREATE TABLE futures(home, visitor, location, id)')
     bd.commit()
 
     week = datetime.date.today().isocalendar()[1] - datetime.date(2015,9,3).isocalendar()[1]
+    id = 0
 
     for i in range(week, 18):
         response = urllib.request.urlopen('http://espn.go.com/nfl/schedule/_/week/' + str(i))
@@ -163,21 +164,23 @@ def ParseFutur():
                         if(odd == True):
                             team1 = team.contents[0].string
                             odd = False
+                            id = id + 1
                         else:
                             team2 = team.contents[0].string
                             odd = True
 
-                BDFutur(team1, team2, loc)
+
+                BDFutur(team1, team2, loc, id)
         print('\n')
 
     bd.close()
 
-def BDFutur(home, visitor, location):
-    #bd = sqlite3.connect("../app/models/NFL.db")
-    bd = sqlite3.connect("NFL.db")
+def BDFutur(home, visitor, location, id):
+    bd = sqlite3.connect("../app/models/NFL.db")
+    #bd = sqlite3.connect("NFL.db")
 
     print(home, visitor, location)
-    bd.execute("INSERT INTO futures VALUES (?,?,?)",(home,visitor,location))
+    bd.execute("INSERT INTO futures VALUES (?,?,?, ?)",(home,visitor,location, id))
     bd.commit()
     bd.close()
 

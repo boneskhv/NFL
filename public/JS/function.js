@@ -21,8 +21,8 @@ function LoadHome() {
 //fait une liste de call AJAX
 function NextAJAX() {
     LoadFutureHome();
-    LoadFutureVisitor();
-    LoadFutureLocation();
+    //LoadFutureVisitor();
+    //LoadFutureLocation();
 }
 
 //requete AJAX pour les match future
@@ -115,6 +115,7 @@ function FillFutureHome(data) {
 
         tableScores.appendChild(tr);
     }
+    LoadFutureVisitor();
 }
 
 //rempli le tableau de visiteur pour les match future
@@ -131,6 +132,7 @@ function FillFutureVisitor(data) {
         td.appendChild(document.createTextNode(content));
         tr.appendChild(td);
     }
+    LoadFutureLocation();
 }
 
 //rempli le tableau de location pour les match future
@@ -365,4 +367,48 @@ function UpdatePython()
             LoadHome();
         }
     }
+}
+
+function LoadAPITeam()
+{
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.open("POST", "/API/Team", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("Action=" + "LoadAPI");
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var result = xmlhttp.responseText;
+            FillAPI(result, "Team");
+        }
+    }
+
+    //FillAPITeam();
+    LoadAPIGames();
+}
+
+function LoadAPIGames()
+{
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.open("POST", "/API/Games", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("Action=" + "LoadAPI");
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var result = xmlhttp.responseText;
+            FillAPI(result, "Games");
+        }
+    }
+}
+
+function FillAPI(data, name)
+{
+    var p = document.getElementById(name);
+
+    p.appendChild(document.createTextNode(data));
+
+    //LoadAPIGames();
 }
