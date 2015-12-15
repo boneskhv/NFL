@@ -56,14 +56,7 @@ session_start();
             <p class="" id="Team" style="display: none"></p>
             <h3>Games <a class="WhiteLink" href="#" onclick="ShowHide('Games')"><span class="glyphicon glyphicon-eye-open"aria-hidden="true"></span></a></h3>
             <p id="Games" style="display: none"></p>
-            <h3>Gains <a class="WhiteLink" href="#" onclick="ShowHide('Gains')"><span class="glyphicon glyphicon-eye-open"aria-hidden="true"></span></a></h3>
-            <p id="Gains" style="display: none"></p>
         </div>
-
-        <h3 class="form-signin-heading">List of accounts</h3>
-        <ul id="lstAccount">
-
-        </ul>
     </div>
 
 </div>
