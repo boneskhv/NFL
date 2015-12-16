@@ -110,6 +110,7 @@ function FillFutureHome(data) {
         var td = document.createElement("td");
 
         td.appendChild(document.createTextNode(content));
+        td.setAttribute("id", "home" + i);
         tr.appendChild(td);
         tr.setAttribute("id", i);
 
@@ -128,6 +129,7 @@ function FillFutureVisitor(data) {
         var tr = document.getElementById(i.toString());
         var td = document.createElement("td");
         td.setAttribute("text-align", "center");
+        td.setAttribute("id", "visitor" + i);
 
         td.appendChild(document.createTextNode(content));
         tr.appendChild(td);
@@ -148,6 +150,10 @@ function FillFutureLocation(data) {
         td.appendChild(document.createTextNode(content));
         tr.appendChild(td);
     }
+
+    var token = document.getElementById("tokenStand");
+    if(token != null)
+        BetHome();
 }
 
 //affiche ou cache l'objet dont le nom est donne en parametre
@@ -412,3 +418,105 @@ function FillAPI(data, name)
 
     //LoadAPIGames();
 }
+
+//onload de la page d'accueil client
+function LoadClientHome()
+{
+    var tokenStand = document.getElementById("tokenStand");
+    tokenStand.innerHTML = "";
+    var betAmount = document.getElementById("betAmount");
+
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.open("POST", "/Client/GetToken", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("Action=" + "getToken");
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var result = xmlhttp.responseText;
+            tokenStand.appendChild(document.createTextNode(result));
+            betAmount.setAttribute("max", result);
+            LoadFutureHome();
+        }
+    }
+}
+
+function BetHome()
+{
+    var table = document.getElementById("Future");
+    var length = table.rows.length;
+
+    for(i = 1; i < length + 1; i++)
+    {
+        var tr = document.getElementById(i.toString());
+        if(i % 2 == 0) {
+            var td = document.createElement("td");
+            var buttonHome = document.createElement("button");
+            buttonHome.setAttribute("class", "btn btn-sm btn-primary");
+            buttonHome.setAttribute("onclick", "CalculateGains("+ (i-1).toString() + ", true)");
+            buttonHome.appendChild(document.createTextNode("Home"))
+            var buttonVisitor = document.createElement("button");
+            buttonVisitor.setAttribute("class", "btn btn-sm btn-primary");
+            buttonVisitor.setAttribute("onclick", "CalculateGains("+ (i-1).toString() + ", false)");
+            buttonVisitor.appendChild(document.createTextNode("Visitor"))
+
+            td.appendChild(buttonHome);
+            td.appendChild(buttonVisitor);
+
+            tr.appendChild(td);
+        }
+    }
+}
+
+//click d'achat de token
+function BuyToken()
+{
+    var token = document.getElementById("token");
+    var nbToken = token.value;
+
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.open("POST", "/Client/AddToken", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("Action=" + nbToken);
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var result = xmlhttp.responseText;
+        }
+    }
+    LoadClientHome();
+}
+
+function CalculateGains(index, isHome)
+{
+    var txtAmount = document.getElementById("betAmount");
+    var amount = txtAmount.value;
+    var tdTeam
+    if(isHome)
+        tdTeam = document.getElementById("home" + index.toString());
+    else
+        tdTeam = document.getElementById("visitor" + index);
+    var teamName = tdTeam.innerHTML;
+
+    var txtCalc = document.getElementById("gainsAmount");
+    var btnBet = document.getElementById("btnBet");
+    btnBet.removeAttribute("disable");
+
+    alert("Action=" + teamName + ";" + amount);
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "/Client/CalculateGains", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("Action=" + teamName + ";" + amount);
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var result = xmlhttp.responseText;
+            alert(result);
+            txtCalc.value = result;
+        }
+    }
+}
+

@@ -2,7 +2,7 @@
 //regarde si il c'est bien connecter
 session_start();
 if (!isset($_SESSION["admin"]))
-    header("location: index.php");
+    header("location: /User/index");
 ?>
 
 <html>
@@ -34,11 +34,11 @@ if (!isset($_SESSION["admin"]))
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">NFL</a>
+                <a class="navbar-brand" href="/User/index">NFL</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li><a href="SignOut.php">Sign out</a></li>
+                    <li><a href="/User/LogOut">Sign out</a></li>
                 </ul>
             </div>
         </div>

@@ -9,6 +9,13 @@ class User extends Controller
         parent::view("index");
     }
 
+    public static function LogOut()
+    {
+        session_unset();
+        session_destroy();
+        parent::view("index");
+    }
+
     public static function login()
     {
         parent::model("BD");
@@ -40,6 +47,8 @@ class User extends Controller
             $Score = BD::LoadScore();
             echo json_encode($Score);
         }
+        else
+            parent::view("index");
     }
 
     public static function LoadFutureHome()
@@ -50,6 +59,8 @@ class User extends Controller
             $Future = BD::LoadFutureHome();
             echo json_encode($Future);
         }
+        else
+            parent::view("index");
     }
 
     public static function LoadFutureVisitor()
@@ -60,6 +71,8 @@ class User extends Controller
             $Future = BD::LoadFutureVisitor();
             echo json_encode($Future);
         }
+        else
+            parent::view("index");
     }
 
     public static function LoadFutureLocation()
@@ -70,6 +83,8 @@ class User extends Controller
             $Future = BD::LoadFutureLocation();
             echo json_encode($Future);
         }
+        else
+            parent::view("index");
     }
 
     public static function UpdatePython()
@@ -79,6 +94,8 @@ class User extends Controller
             parent::model("BD");
             BD::UpdatePython();
         }
+        else
+            parent::view("index");
     }
 
     public static function LoadAPIPage()

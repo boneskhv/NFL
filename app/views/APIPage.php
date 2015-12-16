@@ -33,12 +33,7 @@ session_start();
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">NFL</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse navbar-right">
-                <ul class="nav navbar-nav">
-                    <li><a href="SignOut.php">Sign out</a></li>
-                </ul>
+                <a class="navbar-brand" href="/User/index">NFL</a>
             </div>
         </div>
     </div>

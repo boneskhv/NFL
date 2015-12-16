@@ -2,7 +2,7 @@
 session_start();
 //regarde si il c'est bien connecter
 if (!isset($_SESSION["client"]))
-    header("location: index.php");
+    header("location: /User/index");
 
 ?>
 
@@ -21,7 +21,7 @@ if (!isset($_SESSION["client"]))
     <script src="/JS/function.js"></script>
 
 </head>
-<body>
+<body onload="LoadClientHome()">
 <div>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -34,11 +34,11 @@ if (!isset($_SESSION["client"]))
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="ClientHome.php">NFL</a>
+                <a class="navbar-brand" href="/User/index">NFL</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li><a href="SignOut.php">Sign out</a></li>
+                    <li><a href="/User/LogOut">Sign out</a></li>
                 </ul>
             </div>
         </div>
@@ -46,33 +46,37 @@ if (!isset($_SESSION["client"]))
 </div>
 
 <div class="container-fluid" style="min-height: 5%;">
-    <div class="SondageCreateHome CenterInfo">
+    <div class="SondageCreateHome TextCenter">
         <div class="panel-body">
             <h2 class="WhiteHeader">Token Stand</h2>
-            <input type="number" class="BlackText" min="1" placeholder="Quantity" name="nbQ" required>
-            <button type="button submit" class="btn btn-sm btn-primary">Create</button>
-        </div>
-    </div>
-</div>
 
-<div class="container-fluid" style="min-height: 100%;">
-    <div class="SondageCreateHome CenterInfo">
-        <div class="panel-body">
-            <h2 class="WhiteHeader">Token Stand</h2>
-            <input type="number" class="BlackText" min="1" placeholder="Quantity" name="nbQ" required>
-            <button type="button submit" class="btn btn-sm btn-primary">Create</button>
+            <h3>Current Token coun: <label id="tokenStand"></label></h3>
+            <input type="number" id="token" class="BlackText" min="1" value="20" placeholder="Quantity" name="nbQ"
+                   required></br>
+            <!--<button class="btn btn-sm btn-primary" onclick="BuyToken()">Buy</button>-->
+            <a href="#" onclick="BuyToken()"><img src="../img/Paynow.png"></a>
         </div>
     </div>
 </div>
 
 
-<div></div>
-<div class="blog-footer">
-    <p>Source can be found on <a href="http://github.com/dragonmost/NFL">GitHub</a> by Sam Baker.</p>
-
-    <p>
-        <a href="#">Back to top</a>
-    </p>
+<div class="container-fluid">
+    <div class="SondageCreateHome CenterInfo">
+        <div class="panel-body">
+            <h2 class="WhiteLink">Bets</h2>
+            </p>
+            <label>Token amount:
+                <input type="number" id="betAmount" class="BlackText" min="10" value="10"
+                       placeholder="token bet amount" required>
+            </label>
+            <label>Gains amount:
+                <input type="number" id="gainsAmount" placeholder="calculate" readonly>
+            </label>
+            <button class="btn btn-sm btn-primary" id="btnBet" onclick="BetPlaced()" disabled>Bet</button>
+            </p>
+            <table id="Future"></table>
+        </div>
+    </div>
 </div>
 
 

@@ -17,6 +17,8 @@ class Admin extends Controller
             $accounts = BD::LoadAccount();
             echo json_encode($accounts);
         }
+        else
+            parent::view("index");
     }
 
     public static function AddAccount()
@@ -28,6 +30,8 @@ class Admin extends Controller
             BD::AddAccount($data[0], $data[1], $data[2]);
             echo($data[0] . " was added");
         }
+        else
+            parent::view("index");
     }
 
     public static function ModifyAccount()
@@ -39,6 +43,8 @@ class Admin extends Controller
             BD::ModifyAccount($data[0], $data[1], $data[2]);
             echo($data[0] . " was modified");
         }
+        else
+            parent::view("index");
     }
 
     public static function DeleteAccount()
@@ -49,6 +55,8 @@ class Admin extends Controller
             BD::DeleteAccount($_POST["data"]);
             echo($_POST["data"] . " account was terminated");
         }
+        else
+            parent::view("index");
     }
 
 }

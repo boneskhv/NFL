@@ -316,4 +316,104 @@ class BD
 
         return $result;
     }
+
+    public static function AddTokenToUser($email, $nbToken)
+    {
+        try {
+            $pdo = new PDO('sqlite:../app/models/NFL.db');
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
+
+        $update = "UPDATE Account SET AccountToken= AccountToken + :token WHERE AccountEmail = :email";
+        $req = $pdo->prepare($update);
+        $req->bindValue(":email", $email);
+        $req->bindValue(":token", $nbToken);
+        $req->execute();
+
+        $pdo = null;
+    }
+
+    public static function GetToken($email)
+    {
+        try {
+            $pdo = new PDO('sqlite:../app/models/NFL.db');
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
+
+        try {
+            $sel = "SELECT AccountToken FROM Account WHERE AccountEmail = :id";
+            $req = $pdo->prepare($sel);
+            $req->bindValue(":id", $email);
+            $req->execute();
+
+            $result = $req->fetchAll(PDO::FETCH_NUM);
+
+            $pdo = null;
+
+        } catch (PDOException $ex) {
+            echo "Connection failed: " . $ex->getMessage();
+        }
+
+        return intval($result [0][0]);
+    }
+
+    public static function GetFutureHome()
+    {
+        try {
+            $pdo = new PDO('sqlite:../app/models/NFL.db');
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
+
+        $sel = "SELECT home FROM futures";
+        $req = $pdo->prepare($sel);
+        $req->execute();
+
+        $result = $req->fetchAll(PDO::FETCH_NUM);
+
+        $pdo = null;
+
+        return $result;
+    }
+
+    public static function GetFutureVisitor()
+    {
+        try {
+            $pdo = new PDO('sqlite:../app/models/NFL.db');
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
+
+        $sel = "SELECT visitor FROM futures";
+        $req = $pdo->prepare($sel);
+        $req->execute();
+
+        $result = $req->fetchAll(PDO::FETCH_NUM);
+
+        $pdo = null;
+
+        return $result;
+    }
+
+    public static function CalculateGains($team, $amount)
+    {
+        try {
+            $pdo = new PDO('sqlite:../app/models/NFL.db');
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
+
+        $sel = "SELECT pct FROM standings WHERE team= :team";
+        $req = $pdo->prepare($sel);
+        $req->bindValue(":team", $team);
+        $req->execute();
+
+        $result = $req->fetchAll(PDO::FETCH_NUM);
+
+        $pdo = null;
+
+        return $result * amount;
+    }
 }

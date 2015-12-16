@@ -153,6 +153,11 @@ ul
     border-radius: 13px;
 }
 
+.TextCenter
+{
+    text-align: center;
+}
+
 
 /*
 -webkit-border-radius: 4px;
