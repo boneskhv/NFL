@@ -397,7 +397,7 @@ class BD
         return $result;
     }
 
-    public static function CalculateGains($team, $amount)
+    public static function CalculateGains($team, $opponent, $amount)
     {
         try {
             $pdo = new PDO('sqlite:../app/models/NFL.db');
@@ -410,10 +410,56 @@ class BD
         $req->bindValue(":team", $team);
         $req->execute();
 
-        $result = $req->fetchAll(PDO::FETCH_NUM);
+        $result = $req->fetchAll();
+
+        $teamPCT = $result[0][0];
+
+        $sel = "SELECT pct FROM standings WHERE team= :team";
+        $req = $pdo->prepare($sel);
+        $req->bindValue(":team", $opponent);
+        $req->execute();
+
+        $result = $req->fetchAll();
+
+        $opponentPCT = $result[0][0];
 
         $pdo = null;
 
-        return $result * amount;
+        $difference = abs($teamPCT - $opponentPCT);
+        if($teamPCT > $opponentPCT)
+            $result = 0.5 + ($difference /2);
+        else
+            $result = 0.5 - ($difference /2);
+
+        return round((2 - $result) * $amount + $amount);
+    }
+
+    public static function PlaceBet($better, $betAmount, $gameId, $isHome, $reward)
+    {
+        try {
+            $pdo = new PDO('sqlite:../app/models/NFL.db');
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
+
+        $insert = "INSERT INTO Bet (Beter, Amount, Game, Home, Reward, Seen) VALUES (:beter, :amount, :game, :home, :reward, 0)";
+        $req = $pdo->prepare($insert);
+        $req->bindValue(":beter", $better);
+        $req->bindValue(":amount", $betAmount);
+        $req->bindValue(":game", $gameId);
+        if($isHome)
+            $req->bindValue(":home", 1);
+        else
+            $req->bindValue(":home", 0);
+        $req->bindValue(":reward", $reward);
+        $req->execute();
+
+        $update = "UPDATE Account SET AccountToken= AccountToken - :token WHERE AccountEmail = :better";
+        $req = $pdo->prepare($update);
+        $req->bindValue(":email", $better);
+        $req->bindValue(":token", $betAmount);
+        $req->execute();
+
+        $pdo = null;
     }
 }

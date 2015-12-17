@@ -103,6 +103,7 @@ function FillFutureHome(data) {
 
     tableScores.innerHTML = "";
 
+    var id = 1;
     for (i = 1; i < parsedData.length - 1; i++) {
         var content = parsedData[i].replace(',', '');
 
@@ -110,11 +111,13 @@ function FillFutureHome(data) {
         var td = document.createElement("td");
 
         td.appendChild(document.createTextNode(content));
-        td.setAttribute("id", "home" + i);
+        td.setAttribute("id", "home" + id);
         tr.appendChild(td);
         tr.setAttribute("id", i);
 
         tableScores.appendChild(tr);
+        if(content == "")
+            id = id + 1;
     }
     LoadFutureVisitor();
 }
@@ -123,16 +126,20 @@ function FillFutureHome(data) {
 function FillFutureVisitor(data) {
     var parsedData = data.split('\"');
 
+    var id = 1;
     for (i = 1; i < parsedData.length - 1; i++) {
         var content = parsedData[i].replace(',', '');
 
         var tr = document.getElementById(i.toString());
         var td = document.createElement("td");
         td.setAttribute("text-align", "center");
-        td.setAttribute("id", "visitor" + i);
+        td.setAttribute("id", "visitor" + id);
 
         td.appendChild(document.createTextNode(content));
         tr.appendChild(td);
+
+        if(content == "")
+            id = id + 1;
     }
     LoadFutureLocation();
 }
@@ -183,6 +190,7 @@ function LoadAccount() {
     }
 }
 
+//rempli la liste de compte
 function FillAccountList(data) {
     var tag = document.getElementById("lstAccount");
     tag.innerHTML = "";
@@ -256,10 +264,9 @@ function FillAccountList(data) {
             tag.appendChild(divMod);
         }
     }
-
-
 }
 
+//cache/affiche certaine partie de la vue pour la modification de compte
 function Pencil(index) {
     var divNorm = document.getElementById("norm " + index.toString());
     var divMod = document.getElementById("mod " + index.toString());
@@ -274,6 +281,7 @@ function Pencil(index) {
     }
 }
 
+//appel de modification d'un compte en AJAX
 function ModifyAccount(index) {
     var lblName = document.getElementById("name " + index.toString());
     var name = lblName.innerHTML;
@@ -311,6 +319,7 @@ function ModifyAccount(index) {
     }
 }
 
+//appel de la suppression d'un compte AJAX
 function Trash(index) {
     var lblName = document.getElementById("name " + index.toString());
     var name = lblName.innerHTML;
@@ -358,6 +367,7 @@ function AdminAddAccount() {
     LoadAccount();
 }
 
+//mise a jour du python appeler par un bouton en ce moment
 function UpdatePython()
 {
     var xmlhttp = new XMLHttpRequest();
@@ -375,6 +385,7 @@ function UpdatePython()
     }
 }
 
+//load l'api d'une team pour l'afficher dans une vue
 function LoadAPITeam()
 {
     var xmlhttp = new XMLHttpRequest();
@@ -394,6 +405,7 @@ function LoadAPITeam()
     LoadAPIGames();
 }
 
+//load l'api d'une game pour l'afficher dans une vue
 function LoadAPIGames()
 {
     var xmlhttp = new XMLHttpRequest();
@@ -410,6 +422,7 @@ function LoadAPIGames()
     }
 }
 
+//rempli l'info de API dans la vue
 function FillAPI(data, name)
 {
     var p = document.getElementById(name);
@@ -442,11 +455,13 @@ function LoadClientHome()
     }
 }
 
+//rempli le tableau de bet
 function BetHome()
 {
     var table = document.getElementById("Future");
     var length = table.rows.length;
 
+    var id = 1;
     for(i = 1; i < length + 1; i++)
     {
         var tr = document.getElementById(i.toString());
@@ -454,17 +469,19 @@ function BetHome()
             var td = document.createElement("td");
             var buttonHome = document.createElement("button");
             buttonHome.setAttribute("class", "btn btn-sm btn-primary");
-            buttonHome.setAttribute("onclick", "CalculateGains("+ (i-1).toString() + ", true)");
+            buttonHome.setAttribute("onclick", "CalculateGains("+ (id).toString() + ", true)");
             buttonHome.appendChild(document.createTextNode("Home"))
             var buttonVisitor = document.createElement("button");
             buttonVisitor.setAttribute("class", "btn btn-sm btn-primary");
-            buttonVisitor.setAttribute("onclick", "CalculateGains("+ (i-1).toString() + ", false)");
+            buttonVisitor.setAttribute("onclick", "CalculateGains("+ (id).toString() + ", false)");
             buttonVisitor.appendChild(document.createTextNode("Visitor"))
 
             td.appendChild(buttonHome);
             td.appendChild(buttonVisitor);
 
             tr.appendChild(td);
+
+            id = id + 1;
         }
     }
 }
@@ -489,33 +506,67 @@ function BuyToken()
     LoadClientHome();
 }
 
+//appel le calcule de gain et l'affiche dans le txtbox
 function CalculateGains(index, isHome)
 {
+    var btnBet = document.getElementById("btnBet");
+    btnBet.removeAttribute("disabled");
     var txtAmount = document.getElementById("betAmount");
     var amount = txtAmount.value;
-    var tdTeam
-    if(isHome)
+    var tdTeam;
+    var tdOppo;
+    if(isHome) {
         tdTeam = document.getElementById("home" + index.toString());
-    else
-        tdTeam = document.getElementById("visitor" + index);
+        tdOppo = document.getElementById("visitor" + index.toString());
+        btnBet.setAttribute("value", "home " + index);
+    }
+    else {
+        tdTeam = document.getElementById("visitor" + index.toString());
+        tdOppo = document.getElementById("home" + index.toString());
+        btnBet.setAttribute("value", "visitor " + index);
+    }
     var teamName = tdTeam.innerHTML;
+    var opponentName = tdOppo.innerHTML;
 
     var txtCalc = document.getElementById("gainsAmount");
-    var btnBet = document.getElementById("btnBet");
-    btnBet.removeAttribute("disable");
 
-    alert("Action=" + teamName + ";" + amount);
+
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", "/Client/CalculateGains", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlhttp.send("Action=" + teamName + ";" + amount);
+    xmlhttp.send("Action=" + teamName + ";" + opponentName + ";" + amount);
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var result = xmlhttp.responseText;
+            txtCalc.value = result;
+        }
+    }
+}
+
+function BetPlaced()
+{
+    var btnBet = document.getElementById("btnBet");
+    $data = btnBet.value.split(' ');
+    var home = true;
+    if($data[0] != "home")
+        home = false;
+
+    var txtAmount = document.getElementById("betAmount");
+    var txtReward = document.getElementById("gainsAmount");
+
+    alert("Action=" + txtAmount.value + ";" + $data[1] + ";" + home + ";" + txtReward.value);
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "/Client/PlaceBet", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("Action=" + txtAmount.value + ";" + $data[1] + ";" + home + ";" + txtReward.value);
 
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var result = xmlhttp.responseText;
             alert(result);
-            txtCalc.value = result;
         }
     }
 }

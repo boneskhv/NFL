@@ -60,8 +60,22 @@ class Client extends Controller
         if(isset($_POST["Action"]))
         {
             parent::model("BD");
-            $data = $_POST["Action"].explode(';');
-            $result = BD::CalculateGains($data[0], $data[1]);
+            $data = explode(';', $_POST["Action"]);
+            $result = BD::CalculateGains($data[0], $data[1], $data[2]);
+            echo json_encode($result);
+            //echo $data[1];
+        }
+        else
+            parent::view("index");
+    }
+
+    public static function PlaceBet()
+    {
+        if(isset($_POST["Action"]))
+        {
+            parent::model("BD");
+            $data = explode(';', $_POST["Action"]);
+            $result = BD::PlaceBet($_SESSION["client"], $data[0], $data[1], $data[2], $data[3]);
             echo json_encode($result);
         }
         else

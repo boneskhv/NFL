@@ -36,7 +36,15 @@ def ParseStanding():
             #find tout les scores pour chaque team
             #links2 = soup.find_all('td',class_='')
             links2 = soup.findAll('tr')[i].find_all('td')
-            BDStanding(names, links2[4].contents[0], links2[9].contents[0], links2[10].contents[0])
+
+            nameSplit = names.split(" ");
+
+            if(len(nameSplit) > 2):
+                cityName = nameSplit[0] + " " + nameSplit[1]
+            else:
+                cityName = nameSplit[0]
+
+            BDStanding(cityName, links2[4].contents[0], links2[9].contents[0], links2[10].contents[0])
             for link2 in links2:
                 stat = link2.contents[0]
 

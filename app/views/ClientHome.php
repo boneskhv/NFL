@@ -70,7 +70,7 @@ if (!isset($_SESSION["client"]))
                        placeholder="token bet amount" required>
             </label>
             <label>Gains amount:
-                <input type="number" id="gainsAmount" placeholder="calculate" readonly>
+                <input class="BlackText" type="number" id="gainsAmount" placeholder="calculate" readonly>
             </label>
             <button class="btn btn-sm btn-primary" id="btnBet" onclick="BetPlaced()" disabled>Bet</button>
             </p>
