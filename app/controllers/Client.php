@@ -2,6 +2,7 @@
 
 session_start();
 
+//controller de client
 class Client extends Controller
 {
     public static function index()
@@ -9,6 +10,7 @@ class Client extends Controller
         parent::view("index");
     }
 
+    //appel AddTokenToUser
     public static function AddToken()
     {
         if ($_POST["Action"] > 0) {
@@ -19,6 +21,7 @@ class Client extends Controller
             parent::view("index");
     }
 
+    //appel GetToken
     public static function GetToken()
     {
         if($_POST["Action"] == "getToken")
@@ -31,6 +34,7 @@ class Client extends Controller
             parent::view("index");
     }
 
+    //appel GetFutureHome
     public static function GetFutureHome()
     {
         if(isset($_POST["Action"]))
@@ -43,6 +47,7 @@ class Client extends Controller
             parent::view("index");
     }
 
+    //appel GetFutureVisitor
     public static function GetFutureVisitor()
     {
         if(isset($_POST["Action"]))
@@ -55,6 +60,7 @@ class Client extends Controller
             parent::view("index");
     }
 
+    //appel CalculateGains
     public static function CalculateGains()
     {
         if(isset($_POST["Action"]))
@@ -69,6 +75,7 @@ class Client extends Controller
             parent::view("index");
     }
 
+    //appel PlaceBet
     public static function PlaceBet()
     {
         if(isset($_POST["Action"]))
@@ -82,6 +89,7 @@ class Client extends Controller
             parent::view("index");
     }
 
+    //verifie que t'utilisateur peut acceder a la vue de client
     public static function BetStand()
     {
         if(isset($_SESSION["client"]))
@@ -92,6 +100,7 @@ class Client extends Controller
             parent::view("index");
     }
 
+    //verifie que l'utilisateur peut acceder a la vue de BetInfo
     public static function BetInfoPage()
     {
         if(isset($_SESSION["client"]))
@@ -102,6 +111,7 @@ class Client extends Controller
             parent::view("index");
     }
 
+    //appel CurrentBet
     public static function BetInfoCurrent()
     {
         if(isset($_SESSION["client"]))
@@ -114,6 +124,7 @@ class Client extends Controller
             parent::view("index");
     }
 
+    //appel DeleteBet
     public static function DeleteBet()
     {
         if(isset($_POST["Action"]))

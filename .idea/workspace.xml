@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="506c2060-1dd5-49ec-9a69-ad8d046f80ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/BetInfo.php" />
+      <change type="DELETED" beforePath="C:\wamp\www\NFL\app\controllers\home.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\NFL\app\models\LoadView.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\NFL\app\models\User.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\NFL\app\models\function.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/NFL.db" afterPath="$PROJECT_DIR$/app/models/NFL.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/API.php" afterPath="$PROJECT_DIR$/app/controllers/API.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Admin.php" afterPath="$PROJECT_DIR$/app/controllers/Admin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/BD.php" afterPath="$PROJECT_DIR$/app/models/BD.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Client.php" afterPath="$PROJECT_DIR$/app/controllers/Client.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ClientHome.php" afterPath="$PROJECT_DIR$/app/views/ClientHome.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/User.php" afterPath="$PROJECT_DIR$/app/controllers/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/JS/function.js" afterPath="$PROJECT_DIR$/public/JS/function.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -30,83 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BD.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/BD.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6310518">
-              <caret line="502" column="8" selection-start-line="502" selection-start-column="8" selection-end-line="503" selection-end-column="56" />
-              <folding>
-                <marker date="1450400312671" expanded="true" signature="448:515" placeholder="SELECT * FRO..Account..." />
-                <marker date="1450400312671" expanded="true" signature="1214:1270" placeholder="SELECT Accou..Account..." />
-                <marker date="1450400312671" expanded="true" signature="1856:1876" placeholder="SELECT * FRO..scores..." />
-                <marker date="1450400312671" expanded="true" signature="2440:2461" placeholder="SELECT * FRO..futures..." />
-                <marker date="1450400312671" expanded="true" signature="3032:3053" placeholder="SELECT * FRO..futures..." />
-                <marker date="1450400312671" expanded="true" signature="3625:3646" placeholder="SELECT * FRO..futures..." />
-                <marker date="1450400312671" expanded="true" signature="4407:4516" placeholder="INSERT INTO ..." />
-                <marker date="1450400312671" expanded="true" signature="5166:5214" placeholder="DELETE FROM ..." />
-                <marker date="1450400312671" expanded="true" signature="5777:5860" placeholder="UPDATE Accou..." />
-                <marker date="1450400312671" expanded="true" signature="6104:6165" placeholder="UPDATE Accou..." />
-                <marker date="1450400312671" expanded="true" signature="6359:6426" placeholder="UPDATE Accou..." />
-                <marker date="1450400312671" expanded="true" signature="7011:7034" placeholder="SELECT * FRO..standings..." />
-                <marker date="1450400312671" expanded="true" signature="7586:7607" placeholder="SELECT * FRO..futures..." />
-                <marker date="1450400312671" expanded="true" signature="8160:8194" placeholder="SELECT * FRO..Bet..." />
-                <marker date="1450400312671" expanded="true" signature="8794:8876" placeholder="UPDATE Accou..." />
-                <marker date="1450400312671" expanded="true" signature="9323:9380" placeholder="SELECT Accou..Account..." />
-                <marker date="1450400312671" expanded="true" signature="9976:10000" placeholder="SELECT home ..futures..." />
-                <marker date="1450400312671" expanded="true" signature="10416:10443" placeholder="SELECT visit..futures..." />
-                <marker date="1450400312671" expanded="true" signature="10882:10925" placeholder="SELECT pct F..standings..." />
-                <marker date="1450400312671" expanded="true" signature="11119:11162" placeholder="SELECT pct F..standings..." />
-                <marker date="1450400312671" expanded="true" signature="11915:12034" placeholder="INSERT INTO ..." />
-                <marker date="1450400312671" expanded="true" signature="12425:12502" placeholder="UPDATE Accou..." />
-                <marker date="1450400312671" expanded="true" signature="12425:12507" placeholder="UPDATE Accou..." />
-                <marker date="1450400312671" expanded="true" signature="12940:13076" placeholder="SELECT Amoun..Bet..." />
-                <marker date="1450400312671" expanded="true" signature="12940:13083" placeholder="SELECT Amoun..Bet..." />
-                <marker date="1450400312671" expanded="true" signature="12940:13125" placeholder="SELECT Amoun..Bet..." />
-                <marker date="1450400312671" expanded="true" signature="13582:13619" placeholder="SELECT Bet.A..Bet..." />
-                <marker date="1450400312671" expanded="true" signature="13582:13627" placeholder="SELECT Amoun..Bet..." />
-                <marker date="1450400312671" expanded="true" signature="13801:13883" placeholder="UPDATE Accou..." />
-                <marker date="1450400312671" expanded="true" signature="14080:14107" placeholder="DELETE FROM ..." />
-                <marker date="1450400312671" expanded="true" signature="14080:14109" placeholder="DELETE FROM ..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Client.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Client.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="11.615385">
-              <caret line="76" column="51" selection-start-line="76" selection-start-column="51" selection-end-line="76" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BetInfo.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/BetInfo.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.615385">
-              <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientHome.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/ClientHome.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.153846">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="function.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="function.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/JS/function.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="672" column="46" selection-start-line="672" selection-start-column="46" selection-end-line="672" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.7824">
+              <caret line="643" column="70" selection-start-line="632" selection-start-column="8" selection-end-line="643" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -152,22 +85,23 @@
         <option value="$PROJECT_DIR$/MVC2/app/views/home/index.php" />
         <option value="$PROJECT_DIR$/MVC2/app/models/function.php" />
         <option value="$PROJECT_DIR$/app/views/home/index.php" />
-        <option value="$PROJECT_DIR$/app/controllers/home.php" />
         <option value="$PROJECT_DIR$/app/models/function.php" />
-        <option value="$PROJECT_DIR$/app/controllers/API.php" />
         <option value="$PROJECT_DIR$/app/views/APIPage.php" />
         <option value="$PROJECT_DIR$/app/views/AdminHome.php" />
-        <option value="$PROJECT_DIR$/app/controllers/Admin.php" />
-        <option value="$PROJECT_DIR$/app/controllers/User.php" />
         <option value="$PROJECT_DIR$/app/models/parser.py" />
         <option value="$PROJECT_DIR$/public/.htaccess" />
         <option value="$PROJECT_DIR$/app/views/index.php" />
         <option value="$PROJECT_DIR$/app/views/BetInfo.php" />
         <option value="$PROJECT_DIR$/public/CSS/Sondage.css" />
-        <option value="$PROJECT_DIR$/app/controllers/Client.php" />
-        <option value="$PROJECT_DIR$/public/JS/function.js" />
         <option value="$PROJECT_DIR$/app/views/ClientHome.php" />
+        <option value="$PROJECT_DIR$/app/controllers/home.php" />
+        <option value="$PROJECT_DIR$/app/controllers/Client.php" />
+        <option value="$PROJECT_DIR$/app/controllers/API.php" />
+        <option value="$PROJECT_DIR$/app/controllers/Admin.php" />
+        <option value="$PROJECT_DIR$/app/controllers/User.php" />
+        <option value="$PROJECT_DIR$/app/models/LoadView.php" />
         <option value="$PROJECT_DIR$/app/models/BD.php" />
+        <option value="$PROJECT_DIR$/public/JS/function.js" />
       </list>
     </option>
   </component>
@@ -211,8 +145,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -369,6 +301,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -386,23 +320,6 @@
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.views">
-    <configuration default="false" name="parser (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/models" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="NFL" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/models/parser.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="parser" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -416,6 +333,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="NFL" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/parser.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="parser (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/models" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="NFL" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/models/parser.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -476,7 +410,7 @@
     <frame x="-8" y="-8" width="1376" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19908814" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20212767" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -516,49 +450,38 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="79" column="28" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/BD.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="246" column="74" selection-start-line="246" selection-start-column="74" selection-end-line="246" selection-end-column="74" />
           <folding>
-            <marker date="1450400312671" expanded="true" signature="448:515" placeholder="SELECT * FRO..Account..." />
-            <marker date="1450400312671" expanded="true" signature="1214:1270" placeholder="SELECT Accou..Account..." />
-            <marker date="1450400312671" expanded="true" signature="1856:1876" placeholder="SELECT * FRO..scores..." />
-            <marker date="1450400312671" expanded="true" signature="2440:2461" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="3032:3053" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="3625:3646" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="4407:4516" placeholder="INSERT INTO ..." />
-            <marker date="1450400312671" expanded="true" signature="5166:5214" placeholder="DELETE FROM ..." />
-            <marker date="1450400312671" expanded="true" signature="5777:5860" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="6104:6165" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="6359:6426" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="7011:7034" placeholder="SELECT * FRO..standings..." />
-            <marker date="1450400312671" expanded="true" signature="7586:7607" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="8160:8194" placeholder="SELECT * FRO..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="8794:8876" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="9323:9380" placeholder="SELECT Accou..Account..." />
-            <marker date="1450400312671" expanded="true" signature="9976:10000" placeholder="SELECT home ..futures..." />
-            <marker date="1450400312671" expanded="true" signature="10416:10443" placeholder="SELECT visit..futures..." />
-            <marker date="1450400312671" expanded="true" signature="10882:10925" placeholder="SELECT pct F..standings..." />
-            <marker date="1450400312671" expanded="true" signature="11119:11162" placeholder="SELECT pct F..standings..." />
-            <marker date="1450400312671" expanded="true" signature="11915:12034" placeholder="INSERT INTO ..." />
-            <marker date="1450400312671" expanded="true" signature="12425:12502" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="12425:12507" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13076" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13083" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13125" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13582:13619" placeholder="SELECT Bet.A..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13582:13627" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13801:13883" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="14080:14107" placeholder="DELETE FROM ..." />
-            <marker date="1450400312671" expanded="true" signature="14080:14109" placeholder="DELETE FROM ..." />
+            <element signature="e#7#90#0#PHP" expanded="true" />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Accou..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..scores..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Accou..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT home ..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT visit..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT pct F..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT pct F..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Bet.A..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Beter..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>
@@ -611,37 +534,33 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="246" column="74" selection-start-line="246" selection-start-column="74" selection-end-line="246" selection-end-column="74" />
           <folding>
-            <marker date="1450400312671" expanded="true" signature="448:515" placeholder="SELECT * FRO..Account..." />
-            <marker date="1450400312671" expanded="true" signature="1214:1270" placeholder="SELECT Accou..Account..." />
-            <marker date="1450400312671" expanded="true" signature="1856:1876" placeholder="SELECT * FRO..scores..." />
-            <marker date="1450400312671" expanded="true" signature="2440:2461" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="3032:3053" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="3625:3646" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="4407:4516" placeholder="INSERT INTO ..." />
-            <marker date="1450400312671" expanded="true" signature="5166:5214" placeholder="DELETE FROM ..." />
-            <marker date="1450400312671" expanded="true" signature="5777:5860" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="6104:6165" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="6359:6426" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="7011:7034" placeholder="SELECT * FRO..standings..." />
-            <marker date="1450400312671" expanded="true" signature="7586:7607" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="8160:8194" placeholder="SELECT * FRO..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="8794:8876" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="9323:9380" placeholder="SELECT Accou..Account..." />
-            <marker date="1450400312671" expanded="true" signature="9976:10000" placeholder="SELECT home ..futures..." />
-            <marker date="1450400312671" expanded="true" signature="10416:10443" placeholder="SELECT visit..futures..." />
-            <marker date="1450400312671" expanded="true" signature="10882:10925" placeholder="SELECT pct F..standings..." />
-            <marker date="1450400312671" expanded="true" signature="11119:11162" placeholder="SELECT pct F..standings..." />
-            <marker date="1450400312671" expanded="true" signature="11915:12034" placeholder="INSERT INTO ..." />
-            <marker date="1450400312671" expanded="true" signature="12425:12502" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="12425:12507" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13076" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13083" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13125" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13582:13619" placeholder="SELECT Bet.A..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13582:13627" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13801:13883" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="14080:14107" placeholder="DELETE FROM ..." />
-            <marker date="1450400312671" expanded="true" signature="14080:14109" placeholder="DELETE FROM ..." />
+            <element signature="e#7#90#0#PHP" expanded="true" />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Accou..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..scores..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Accou..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT home ..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT visit..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT pct F..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT pct F..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Bet.A..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Beter..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>
@@ -694,37 +613,33 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="246" column="49" selection-start-line="246" selection-start-column="49" selection-end-line="246" selection-end-column="49" />
           <folding>
-            <marker date="1450400312671" expanded="true" signature="448:515" placeholder="SELECT * FRO..Account..." />
-            <marker date="1450400312671" expanded="true" signature="1214:1270" placeholder="SELECT Accou..Account..." />
-            <marker date="1450400312671" expanded="true" signature="1856:1876" placeholder="SELECT * FRO..scores..." />
-            <marker date="1450400312671" expanded="true" signature="2440:2461" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="3032:3053" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="3625:3646" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="4407:4516" placeholder="INSERT INTO ..." />
-            <marker date="1450400312671" expanded="true" signature="5166:5214" placeholder="DELETE FROM ..." />
-            <marker date="1450400312671" expanded="true" signature="5777:5860" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="6104:6165" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="6359:6426" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="7011:7034" placeholder="SELECT * FRO..standings..." />
-            <marker date="1450400312671" expanded="true" signature="7586:7607" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="8160:8194" placeholder="SELECT * FRO..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="8794:8876" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="9323:9380" placeholder="SELECT Accou..Account..." />
-            <marker date="1450400312671" expanded="true" signature="9976:10000" placeholder="SELECT home ..futures..." />
-            <marker date="1450400312671" expanded="true" signature="10416:10443" placeholder="SELECT visit..futures..." />
-            <marker date="1450400312671" expanded="true" signature="10882:10925" placeholder="SELECT pct F..standings..." />
-            <marker date="1450400312671" expanded="true" signature="11119:11162" placeholder="SELECT pct F..standings..." />
-            <marker date="1450400312671" expanded="true" signature="11915:12034" placeholder="INSERT INTO ..." />
-            <marker date="1450400312671" expanded="true" signature="12425:12502" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="12425:12507" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13076" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13083" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13125" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13582:13619" placeholder="SELECT Bet.A..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13582:13627" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13801:13883" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="14080:14107" placeholder="DELETE FROM ..." />
-            <marker date="1450400312671" expanded="true" signature="14080:14109" placeholder="DELETE FROM ..." />
+            <element signature="e#7#90#0#PHP" expanded="true" />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Accou..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..scores..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Accou..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT home ..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT visit..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT pct F..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT pct F..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Bet.A..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Beter..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>
@@ -770,37 +685,33 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="246" column="49" selection-start-line="246" selection-start-column="49" selection-end-line="246" selection-end-column="49" />
           <folding>
-            <marker date="1450400312671" expanded="true" signature="448:515" placeholder="SELECT * FRO..Account..." />
-            <marker date="1450400312671" expanded="true" signature="1214:1270" placeholder="SELECT Accou..Account..." />
-            <marker date="1450400312671" expanded="true" signature="1856:1876" placeholder="SELECT * FRO..scores..." />
-            <marker date="1450400312671" expanded="true" signature="2440:2461" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="3032:3053" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="3625:3646" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="4407:4516" placeholder="INSERT INTO ..." />
-            <marker date="1450400312671" expanded="true" signature="5166:5214" placeholder="DELETE FROM ..." />
-            <marker date="1450400312671" expanded="true" signature="5777:5860" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="6104:6165" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="6359:6426" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="7011:7034" placeholder="SELECT * FRO..standings..." />
-            <marker date="1450400312671" expanded="true" signature="7586:7607" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="8160:8194" placeholder="SELECT * FRO..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="8794:8876" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="9323:9380" placeholder="SELECT Accou..Account..." />
-            <marker date="1450400312671" expanded="true" signature="9976:10000" placeholder="SELECT home ..futures..." />
-            <marker date="1450400312671" expanded="true" signature="10416:10443" placeholder="SELECT visit..futures..." />
-            <marker date="1450400312671" expanded="true" signature="10882:10925" placeholder="SELECT pct F..standings..." />
-            <marker date="1450400312671" expanded="true" signature="11119:11162" placeholder="SELECT pct F..standings..." />
-            <marker date="1450400312671" expanded="true" signature="11915:12034" placeholder="INSERT INTO ..." />
-            <marker date="1450400312671" expanded="true" signature="12425:12502" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="12425:12507" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13076" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13083" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13125" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13582:13619" placeholder="SELECT Bet.A..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13582:13627" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13801:13883" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="14080:14107" placeholder="DELETE FROM ..." />
-            <marker date="1450400312671" expanded="true" signature="14080:14109" placeholder="DELETE FROM ..." />
+            <element signature="e#7#90#0#PHP" expanded="true" />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Accou..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..scores..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Accou..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT home ..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT visit..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT pct F..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT pct F..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Bet.A..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Beter..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>
@@ -832,37 +743,33 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="224" column="27" selection-start-line="224" selection-start-column="27" selection-end-line="224" selection-end-column="27" />
           <folding>
-            <marker date="1450400312671" expanded="true" signature="448:515" placeholder="SELECT * FRO..Account..." />
-            <marker date="1450400312671" expanded="true" signature="1214:1270" placeholder="SELECT Accou..Account..." />
-            <marker date="1450400312671" expanded="true" signature="1856:1876" placeholder="SELECT * FRO..scores..." />
-            <marker date="1450400312671" expanded="true" signature="2440:2461" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="3032:3053" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="3625:3646" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="4407:4516" placeholder="INSERT INTO ..." />
-            <marker date="1450400312671" expanded="true" signature="5166:5214" placeholder="DELETE FROM ..." />
-            <marker date="1450400312671" expanded="true" signature="5777:5860" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="6104:6165" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="6359:6426" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="7011:7034" placeholder="SELECT * FRO..standings..." />
-            <marker date="1450400312671" expanded="true" signature="7586:7607" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="8160:8194" placeholder="SELECT * FRO..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="8794:8876" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="9323:9380" placeholder="SELECT Accou..Account..." />
-            <marker date="1450400312671" expanded="true" signature="9976:10000" placeholder="SELECT home ..futures..." />
-            <marker date="1450400312671" expanded="true" signature="10416:10443" placeholder="SELECT visit..futures..." />
-            <marker date="1450400312671" expanded="true" signature="10882:10925" placeholder="SELECT pct F..standings..." />
-            <marker date="1450400312671" expanded="true" signature="11119:11162" placeholder="SELECT pct F..standings..." />
-            <marker date="1450400312671" expanded="true" signature="11915:12034" placeholder="INSERT INTO ..." />
-            <marker date="1450400312671" expanded="true" signature="12425:12502" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="12425:12507" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13076" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13083" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13125" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13582:13619" placeholder="SELECT Bet.A..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13582:13627" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13801:13883" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="14080:14107" placeholder="DELETE FROM ..." />
-            <marker date="1450400312671" expanded="true" signature="14080:14109" placeholder="DELETE FROM ..." />
+            <element signature="e#7#90#0#PHP" expanded="true" />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Accou..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..scores..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Accou..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT home ..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT visit..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT pct F..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT pct F..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Bet.A..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Beter..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>
@@ -878,34 +785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/function.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.6327212">
-          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/AdminHome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6153846">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8013356">
-          <caret line="58" column="34" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -937,14 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/core/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.028380634">
@@ -968,32 +839,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/core/App.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13522537">
           <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-63.423077">
-          <caret line="97" column="34" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/API.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39732888">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1005,83 +854,118 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/BetInfo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.615385">
-          <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/CSS/Sondage.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6192">
           <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Client.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="11.615385">
-          <caret line="76" column="51" selection-start-line="76" selection-start-column="51" selection-end-line="76" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/JS/function.js">
+    <entry file="file://$PROJECT_DIR$/app/views/BetInfo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="672" column="46" selection-start-line="672" selection-start-column="46" selection-end-line="672" selection-end-column="46" />
+          <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ClientHome.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846">
+        <state vertical-scroll-proportion="0.0">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6153846">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11352254">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7378965">
+          <caret line="107" column="33" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/AdminHome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6153846">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/API.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.4615386">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/BD.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6310518">
-          <caret line="502" column="8" selection-start-line="502" selection-start-column="8" selection-end-line="503" selection-end-column="56" />
+        <state vertical-scroll-proportion="327.42307">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
           <folding>
-            <marker date="1450400312671" expanded="true" signature="448:515" placeholder="SELECT * FRO..Account..." />
-            <marker date="1450400312671" expanded="true" signature="1214:1270" placeholder="SELECT Accou..Account..." />
-            <marker date="1450400312671" expanded="true" signature="1856:1876" placeholder="SELECT * FRO..scores..." />
-            <marker date="1450400312671" expanded="true" signature="2440:2461" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="3032:3053" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="3625:3646" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="4407:4516" placeholder="INSERT INTO ..." />
-            <marker date="1450400312671" expanded="true" signature="5166:5214" placeholder="DELETE FROM ..." />
-            <marker date="1450400312671" expanded="true" signature="5777:5860" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="6104:6165" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="6359:6426" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="7011:7034" placeholder="SELECT * FRO..standings..." />
-            <marker date="1450400312671" expanded="true" signature="7586:7607" placeholder="SELECT * FRO..futures..." />
-            <marker date="1450400312671" expanded="true" signature="8160:8194" placeholder="SELECT * FRO..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="8794:8876" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="9323:9380" placeholder="SELECT Accou..Account..." />
-            <marker date="1450400312671" expanded="true" signature="9976:10000" placeholder="SELECT home ..futures..." />
-            <marker date="1450400312671" expanded="true" signature="10416:10443" placeholder="SELECT visit..futures..." />
-            <marker date="1450400312671" expanded="true" signature="10882:10925" placeholder="SELECT pct F..standings..." />
-            <marker date="1450400312671" expanded="true" signature="11119:11162" placeholder="SELECT pct F..standings..." />
-            <marker date="1450400312671" expanded="true" signature="11915:12034" placeholder="INSERT INTO ..." />
-            <marker date="1450400312671" expanded="true" signature="12425:12502" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="12425:12507" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13076" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13083" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="12940:13125" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13582:13619" placeholder="SELECT Bet.A..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13582:13627" placeholder="SELECT Amoun..Bet..." />
-            <marker date="1450400312671" expanded="true" signature="13801:13883" placeholder="UPDATE Accou..." />
-            <marker date="1450400312671" expanded="true" signature="14080:14107" placeholder="DELETE FROM ..." />
-            <marker date="1450400312671" expanded="true" signature="14080:14109" placeholder="DELETE FROM ..." />
+            <element signature="e#7#90#0#PHP" expanded="true" />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Accou..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..scores..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Accou..Account..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT home ..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT visit..futures..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT pct F..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT pct F..standings..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Bet.A..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="SELECT Beter..Bet..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="UPDATE Accou..." />
+            <marker date="1450402634941" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/JS/function.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7824">
+          <caret line="643" column="70" selection-start-line="632" selection-start-column="8" selection-end-line="643" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>

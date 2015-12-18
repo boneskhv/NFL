@@ -1,9 +1,6 @@
 //requete AJAX des scores
 function LoadHome() {
     var xmlhttp = new XMLHttpRequest();
-
-    //xmlhttp.open("POST", "../app/controllers/User.php/LoadHome", true);
-    //xmlhttp.open("POST", "/NFL/User/LoadHome", true);
     xmlhttp.open("POST", "/User/LoadScore", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("Action=LoadHome");
@@ -14,21 +11,17 @@ function LoadHome() {
             FillScore(tabTablesScore);
         }
     }
-
     NextAJAX();
 }
 
 //fait une liste de call AJAX
 function NextAJAX() {
     LoadFutureHome();
-    //LoadFutureVisitor();
-    //LoadFutureLocation();
 }
 
 //requete AJAX pour les match future
 function LoadFutureHome() {
     var xmlhttp = new XMLHttpRequest();
-
     xmlhttp.open("POST", "/User/LoadFutureHome", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("Action=LoadHome");
@@ -44,7 +37,6 @@ function LoadFutureHome() {
 //requete AJAX pour la liste de visiteur des match future
 function LoadFutureVisitor() {
     var xmlhttp = new XMLHttpRequest();
-
     xmlhttp.open("POST", "/User/LoadFutureVisitor", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("Action=LoadHome");
@@ -60,7 +52,6 @@ function LoadFutureVisitor() {
 //requete AJAX pour les location des match future
 function LoadFutureLocation() {
     var xmlhttp = new XMLHttpRequest();
-
     xmlhttp.open("POST", "/User/LoadFutureLocation", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("Action=LoadHome");
@@ -80,6 +71,7 @@ function FillScore(data) {
 
     tableScores.innerHTML = "";
 
+    //boucle sur les scores
     for (i = 1; i < parsedData.length - 1; i++) {
         if (i % 2 == 0)
             var content = parsedData[i].replace(',', '');
@@ -103,7 +95,8 @@ function FillFutureHome(data) {
 
     tableScores.innerHTML = "";
 
-    var id = 1;
+    var id = 1; //id du la team (ajouter pour assure des increment de 1)
+    //boucle sur les element des futures parties
     for (i = 1; i < parsedData.length - 1; i++) {
         var content = parsedData[i].replace(',', '');
 
@@ -127,6 +120,7 @@ function FillFutureVisitor(data) {
     var parsedData = data.split('\"');
 
     var id = 1;
+    //boucle sur les element des futures parties
     for (i = 1; i < parsedData.length - 1; i++) {
         var content = parsedData[i].replace(',', '');
 
@@ -148,6 +142,7 @@ function FillFutureVisitor(data) {
 function FillFutureLocation(data) {
     var parsedData = data.split('\"');
 
+    //boucle sur les element des futures parties
     for (i = 1; i < parsedData.length - 1; i++) {
         var content = parsedData[i].replace(',', '');
 
@@ -175,9 +170,6 @@ function ShowHide(tabName) {
 ///AdminHome///
 function LoadAccount() {
     var xmlhttp = new XMLHttpRequest();
-
-    //xmlhttp.open("POST", "../app/controllers/User.php/LoadHome", true);
-    //xmlhttp.open("POST", "/NFL/User/LoadHome", true);
     xmlhttp.open("POST", "/Admin/LoadAccountList", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("Action=LoadAccount");
@@ -196,7 +188,9 @@ function FillAccountList(data) {
     tag.innerHTML = "";
     var parsedData = data.split('\"');
 
+    //boucle sur la liste de compte
     for (i = 1; i < parsedData.length - 1; i++) {
+        //mise en page des comptes
         if (parsedData[i] != ",") {
             var id = i.toString();
             var li = document.createElement("li");
@@ -225,7 +219,6 @@ function FillAccountList(data) {
 
             //partie de modification
             var oldName = document.createElement("label");
-            //oldName.setAttribute("type", "hidden");
             oldName.setAttribute("name", "oldName");
             oldName.setAttribute("value", parsedData[i]);
             oldName.setAttribute("id", "name " + id);
@@ -291,6 +284,7 @@ function ModifyAccount(index) {
     var pw = lblPW.value;
     var token = lblToken.value;
 
+    //verification avant de faire la modification de compte
     if (pw == "" && token == "") {
         alert("at least one of the field mosst be filled.");
     }
@@ -304,7 +298,6 @@ function ModifyAccount(index) {
         var data = name + ";" + pw + ";" + token;
 
         var xmlhttp = new XMLHttpRequest();
-
         xmlhttp.open("POST", "/Admin/ModifyAccount", true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send("data=" + data);
@@ -312,7 +305,6 @@ function ModifyAccount(index) {
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var Result = xmlhttp.responseText;
-                //alert(Result);
             }
         }
         LoadAccount();
@@ -325,7 +317,6 @@ function Trash(index) {
     var name = lblName.innerHTML;
 
     var xmlhttp = new XMLHttpRequest();
-
     xmlhttp.open("POST", "/Admin/DeleteAccount", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("data=" + name);
@@ -350,7 +341,6 @@ function AdminAddAccount() {
     data = name.value + ";" + pw.value + ";" + token.value;
 
     var xmlhttp = new XMLHttpRequest();
-
     xmlhttp.open("POST", "/Admin/AddAccount", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("data=" + data);
@@ -361,9 +351,7 @@ function AdminAddAccount() {
             alert(Result);
         }
     }
-
     name.innerHTML = "";
-
     LoadAccount();
 }
 
@@ -371,7 +359,6 @@ function AdminAddAccount() {
 function UpdatePython()
 {
     var xmlhttp = new XMLHttpRequest();
-
     xmlhttp.open("POST", "/User/UpdatePython", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("Action=" + "updatePython");
@@ -379,7 +366,7 @@ function UpdatePython()
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var Result = xmlhttp.responseText;
-            alert("Requete completed");
+            alert("Request completed");
             LoadHome();
         }
     }
@@ -389,7 +376,6 @@ function UpdatePython()
 function LoadAPITeam()
 {
     var xmlhttp = new XMLHttpRequest();
-
     xmlhttp.open("POST", "/API/Team", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("Action=" + "LoadAPI");
@@ -400,8 +386,6 @@ function LoadAPITeam()
             FillAPI(result, "Team");
         }
     }
-
-    //FillAPITeam();
     LoadAPIGames();
 }
 
@@ -409,7 +393,6 @@ function LoadAPITeam()
 function LoadAPIGames()
 {
     var xmlhttp = new XMLHttpRequest();
-
     xmlhttp.open("POST", "/API/Games", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("Action=" + "LoadAPI");
@@ -426,10 +409,7 @@ function LoadAPIGames()
 function FillAPI(data, name)
 {
     var p = document.getElementById(name);
-
     p.appendChild(document.createTextNode(data));
-
-    //LoadAPIGames();
 }
 
 //onload de la page d'accueil client
@@ -440,7 +420,6 @@ function LoadClientHome()
     var betAmount = document.getElementById("betAmount");
 
     var xmlhttp = new XMLHttpRequest();
-
     xmlhttp.open("POST", "/Client/GetToken", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("Action=" + "getToken");
@@ -530,8 +509,6 @@ function CalculateGains(index, isHome)
 
     var txtCalc = document.getElementById("gainsAmount");
 
-
-
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", "/Client/CalculateGains", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -545,6 +522,7 @@ function CalculateGains(index, isHome)
     }
 }
 
+//place une mise AJAX
 function BetPlaced()
 {
     var btnBet = document.getElementById("btnBet");
@@ -568,6 +546,7 @@ function BetPlaced()
     }
 }
 
+//recupere les info sur les mises AJAX
 function LoadBetInfo()
 {
     var xmlhttp = new XMLHttpRequest();
@@ -583,8 +562,12 @@ function LoadBetInfo()
     }
 }
 
+//remplis la liste de mise
 function FillCurrentBet(data)
 {
+    //on peut parser le json comme sa a la place de le faire a la main
+    //j'aurais du trouve sa plus tot
+    //transforme mon json en plusieurs tableaux d'information
     var json = JSON.parse(data);
     var amounts = json.map(function(item){
         return item["Amount"];
@@ -612,6 +595,7 @@ function FillCurrentBet(data)
         return item["Id"];
     });
 
+    //rempli la page avec mes info sur les mises
     var tabCurrent = document.getElementById("CurrentBet");
     var tabPassed = document.getElementById("PassedBet");
     tabCurrent.innerHTML = "<tr><th>Amount</th><th>Reward</th><th>Game</th><th>Location</th><th>You are cheering for</th><th>Action</th></tr>";
@@ -646,21 +630,26 @@ function FillCurrentBet(data)
         tr.appendChild(tdGame);
         tr.appendChild(tdLocation);
         tr.appendChild(tdIsVisitor);
+        //regarde si la partie est termine pour le mettre dans le bon tableau
         if(isPassed[i] == 1) {
             tr.appendChild(tdButton);
             tabCurrent.appendChild(tr);
         }
         else {
-            var tdWat = document.createElement("td");
+            var tdResult = document.createElement("td");
+            //regarde si la partie a été gagne ou perdu
             if(isPassed[i] == 0)
-                tdWat.appendChild(document.createTextNode("Won"));
+                tdResult.appendChild(document.createTextNode("Won"));
+            else
+                tdResult.appendChild(document.createTextNode("Lost"));
 
-            tr.appendChild(tdWat);
+            tr.appendChild(tdResult);
             tabPassed.appendChild(tr);
         }
     }
 }
 
+//supprime une mise AJAX
 function DeleteBet(id)
 {
     var xmlhttp = new XMLHttpRequest();

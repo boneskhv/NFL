@@ -2,6 +2,7 @@
 
 session_start();
 
+//controller d'API
 class API extends Controller
 {
     public static function index()
@@ -9,6 +10,7 @@ class API extends Controller
         parent::view("index");
     }
 
+    //Appel l'API team
     public static function Team()
     {
         parent::model("BD");
@@ -16,6 +18,7 @@ class API extends Controller
         echo json_encode($team);
     }
 
+    //appel les api de games
     public static function Games($id = -1)
     {
         parent::model("BD");

@@ -2,6 +2,7 @@
 
 session_start();
 
+//controlleer d'utilisateur
 class User extends Controller
 {
     public static function index()
@@ -9,6 +10,7 @@ class User extends Controller
         parent::view("index");
     }
 
+    //deconnecte un client
     public static function LogOut()
     {
         session_unset();
@@ -16,6 +18,7 @@ class User extends Controller
         parent::view("index");
     }
 
+    //appel Connect et la vue approprier
     public static function login()
     {
         parent::model("BD");
@@ -38,7 +41,7 @@ class User extends Controller
         }
     }
 
-
+    //appel LoadScore
     public static function LoadScore()
     {
         if($_POST["Action"] == "LoadHome")
@@ -51,6 +54,7 @@ class User extends Controller
             parent::view("index");
     }
 
+    //appel LoadFutureHome
     public static function LoadFutureHome()
     {
         if($_POST["Action"] == "LoadHome")
@@ -63,6 +67,7 @@ class User extends Controller
             parent::view("index");
     }
 
+    //appel LoadFutureVisitor
     public static function LoadFutureVisitor()
     {
         if($_POST["Action"] == "LoadHome")
@@ -75,6 +80,7 @@ class User extends Controller
             parent::view("index");
     }
 
+    //appel LoadFutureLocation
     public static function LoadFutureLocation()
     {
         if($_POST["Action"] == "LoadHome")
@@ -87,6 +93,7 @@ class User extends Controller
             parent::view("index");
     }
 
+    //UpdatePython
     public static function UpdatePython()
     {
         if($_POST["Action"] == "updatePython")
@@ -98,6 +105,7 @@ class User extends Controller
             parent::view("index");
     }
 
+    //appel la vue de la page API
     public static function LoadAPIPage()
     {
         parent::view("APIPage");

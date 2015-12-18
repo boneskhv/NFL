@@ -6,6 +6,7 @@
  * Date: 01/12/2015
  * Time: 09:50
  */
+//modele des actions effectués sur la BD
 class BD
 {
     //Regarde si le compte existe dans la BD et si c'est un admin ou un client
@@ -37,6 +38,7 @@ class BD
         }
     }
 
+    //recupere la liste d'account qui ne sont pas admin
     public static function LoadAccount()
     {
         try {
@@ -86,6 +88,7 @@ class BD
 
     }
 
+    //recupere les team "home" des match futures
     public static function LoadFutureHome()
     {
         try {
@@ -110,6 +113,7 @@ class BD
         return $valFuture;
     }
 
+    //recupere les team "visitor" des match futures
     public static function LoadFutureVisitor()
     {
         try {
@@ -134,6 +138,7 @@ class BD
         return $valFuture;
     }
 
+    //recupere la location des match futures
     public static function LoadFutureLocation()
     {
         try {
@@ -158,6 +163,7 @@ class BD
         return $valFuture;
     }
 
+    //ajoute un compte client
     public static function AddAccount($email, $pw, $nbToken)
     {
 
@@ -187,6 +193,7 @@ class BD
         $pdo = null;
     }
 
+    //supprime un compte
     public static function DeleteAccount($email)
     {
         try {
@@ -208,6 +215,7 @@ class BD
         $pdo = null;
     }
 
+    //modifie un compte
     public static function ModifyAccount($email, $pw, $token)
     {
         try {
@@ -216,6 +224,7 @@ class BD
             echo 'Connection failed: ' . $e->getMessage();
         }
 
+        //regarde si modifie le nombre de token ou le password ou les 2
         if ($pw != " " && $token != " ") {
             $update = "UPDATE Account SET AccountPW= :pw, AccountToken= :token WHERE AccountEmail = :email";
             $req = $pdo->prepare($update);
@@ -244,6 +253,7 @@ class BD
         exec('C:\Python34\python.exe ../app/models/parser.py 2>&1');
     }
 
+    //retour de l'API/Team
     public static function TeamAPI()
     {
         try {
@@ -268,6 +278,7 @@ class BD
         return $result;
     }
 
+    //retour de l'API/games
     public static function GamesAPI()
     {
         try {
@@ -292,6 +303,7 @@ class BD
         return $result;
     }
 
+    //retour de l'API/games/x
     public static function BetAPI($id)
     {
         try {
@@ -317,6 +329,7 @@ class BD
         return $result;
     }
 
+    //ajout de token dans la BD lors de l'achat de token
     public static function AddTokenToUser($email, $nbToken)
     {
         try {
@@ -334,6 +347,7 @@ class BD
         $pdo = null;
     }
 
+    //recupere le nombre de token d'un client
     public static function GetToken($email)
     {
         try {
@@ -359,6 +373,7 @@ class BD
         return intval($result [0][0]);
     }
 
+    //recupere les info de future match
     public static function GetFutureHome()
     {
         try {
@@ -377,7 +392,6 @@ class BD
 
         return $result;
     }
-
     public static function GetFutureVisitor()
     {
         try {
@@ -397,6 +411,7 @@ class BD
         return $result;
     }
 
+    //calcule le gain d'un bet selon le PCT des equipe et le nombre de token gager
     public static function CalculateGains($team, $opponent, $amount)
     {
         try {
@@ -405,6 +420,7 @@ class BD
             echo 'Connection failed: ' . $e->getMessage();
         }
 
+        //recuperation des PCTs
         $sel = "SELECT pct FROM standings WHERE team= :team";
         $req = $pdo->prepare($sel);
         $req->bindValue(":team", $team);
@@ -425,6 +441,7 @@ class BD
 
         $pdo = null;
 
+        //calcule de gain
         $difference = abs($teamPCT - $opponentPCT);
         if($teamPCT > $opponentPCT)
             $result = 0.5 + ($difference /2);
@@ -434,6 +451,7 @@ class BD
         return round((2 - $result) * $amount + $amount);
     }
 
+    //ajoute une mise a la BD
     public static function PlaceBet($beter, $betAmount, $gameId, $isHome, $reward)
     {
         try {
@@ -442,6 +460,7 @@ class BD
             echo 'Connection failed: ' . $e->getMessage();
         }
 
+        //ajoute la mise
         $insert = "INSERT INTO Bet (Beter, Amount, Game, Home, Reward, Seen, Status) VALUES (:beter, :amount, :game, :home, :reward, 0, 1)";
         $req = $pdo->prepare($insert);
         $req->bindValue(":beter", $beter);
@@ -454,6 +473,7 @@ class BD
         $req->bindValue(":reward", $reward);
         $req->execute();
 
+        //retire les jetons au clients
         $update = "UPDATE Account SET AccountToken= AccountToken - :token WHERE AccountEmail = :email";
         $req = $pdo->prepare($update);
         $req->bindValue(":email", $beter);
@@ -463,6 +483,7 @@ class BD
         $pdo = null;
     }
 
+    //recupere les mises du client
     public static function CurrentBet($email)
     {
         try {
@@ -483,6 +504,7 @@ class BD
         return $result;
     }
 
+    //supprime une mise
     public static function DeleteBet($id)
     {
         try {
@@ -491,6 +513,7 @@ class BD
             echo 'Connection failed: ' . $e->getMessage();
         }
 
+        //recupere les info sur le bet
         $sel = "SELECT Beter , Amount FROM Bet WHERE Id = :id";
         $req = $pdo->prepare($sel);
         $req->bindValue(":id", $id);
@@ -498,12 +521,14 @@ class BD
 
         $result = $req->fetchAll(PDO::FETCH_ASSOC);
 
+        //redonne les jetons au client
         $update = "UPDATE Account SET AccountToken= AccountToken + :token WHERE AccountEmail = :email";
         $req = $pdo->prepare($update);
         $req->bindValue(":email", $result[0]["Beter"]);
         $req->bindValue(":token", $result[0]["Amount"]);
         $req->execute();
 
+        //supprime la mise de la BD
         $del = "DELETE FROM Bet WHERE Id= :id";
         $req = $pdo->prepare($del);
         $req->bindValue(':id', $id);

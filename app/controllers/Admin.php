@@ -2,6 +2,7 @@
 
 session_start();
 
+//controller des admins
 class Admin extends Controller
 {
     public static function index()
@@ -9,6 +10,7 @@ class Admin extends Controller
         parent::view("index");
     }
 
+    //appel LoadAccount
     public static function LoadAccountList()
     {
         if($_POST["Action"] == "LoadAccount")
@@ -21,6 +23,7 @@ class Admin extends Controller
             parent::view("index");
     }
 
+    //appel AddAccount
     public static function AddAccount()
     {
         if(isset($_POST["data"]))
@@ -34,6 +37,7 @@ class Admin extends Controller
             parent::view("index");
     }
 
+    //appel ModifyAccount
     public static function ModifyAccount()
     {
         if(isset($_POST["data"]))
@@ -47,6 +51,7 @@ class Admin extends Controller
             parent::view("index");
     }
 
+    //appel DeleteAccount
     public static function DeleteAccount()
     {
         if(isset($_POST["data"]))
