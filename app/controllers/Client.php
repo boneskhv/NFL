@@ -81,4 +81,48 @@ class Client extends Controller
         else
             parent::view("index");
     }
+
+    public static function BetStand()
+    {
+        if(isset($_SESSION["client"]))
+        {
+            parent::view("ClientHome");
+        }
+        else
+            parent::view("index");
+    }
+
+    public static function BetInfoPage()
+    {
+        if(isset($_SESSION["client"]))
+        {
+            parent::view("BetInfo");
+        }
+        else
+            parent::view("index");
+    }
+
+    public static function BetInfoCurrent()
+    {
+        if(isset($_SESSION["client"]))
+        {
+            parent::model("BD");
+            $result = BD::CurrentBet($_SESSION["client"]);
+            echo json_encode($result);
+        }
+        else
+            parent::view("index");
+    }
+
+    public static function DeleteBet()
+    {
+        if(isset($_POST["Action"]))
+        {
+            parent::model("BD");
+            $result = BD::DeleteBet($_POST["Action"]);
+            echo json_encode($result);
+        }
+        else
+            parent::view("index");
+    }
 }

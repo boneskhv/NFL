@@ -21,7 +21,7 @@ if (!isset($_SESSION["client"]))
     <script src="/JS/function.js"></script>
 
 </head>
-<body onload="LoadClientHome()">
+<body onload="LoadBetInfo()">
 <div>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -38,7 +38,7 @@ if (!isset($_SESSION["client"]))
             </div>
             <div id="navbar" class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li><a href="/Client/BetInfoPage">Bets</a></li>
+                    <li><a href="/Client/BetInfo">Bet Stand</a></li>
                     <li><a href="/User/LogOut">Sign out</a></li>
                 </ul>
             </div>
@@ -46,36 +46,37 @@ if (!isset($_SESSION["client"]))
     </div>
 </div>
 
-<div class="container-fluid" style="min-height: 5%;">
-    <div class="SondageCreateHome TextCenter">
+<div class="container-fluid">
+    <div class="SondageCreateHome CenterInfo">
         <div class="panel-body">
-            <h2 class="WhiteHeader">Token Stand</h2>
-
-            <h3>Current Token count: <label id="tokenStand"></label></h3>
-            <input type="number" id="token" class="BlackText" min="1" value="20" placeholder="Quantity" name="nbQ"
-                   required></br>
-            <!--<button class="btn btn-sm btn-primary" onclick="BuyToken()">Buy</button>-->
-            <a href="#" onclick="BuyToken()"><img src="../img/Paynow.png"></a>
+            <h2 class="WhiteLink">Current Bets</h2>
+            <table id="CurrentBet" class="table ">
+                <tr>
+                    <th>Amount</th>
+                    <th>Reward</th>
+                    <th>Game</th>
+                    <th>Location</th>
+                    <th>You are cheering for</th>
+                    <th>Action</th>
+                </tr>
+            </table>
         </div>
     </div>
 </div>
 
-
 <div class="container-fluid">
     <div class="SondageCreateHome CenterInfo">
         <div class="panel-body">
-            <h2 class="WhiteLink">Bets</h2>
-            </p>
-            <label>Token amount:
-                <input type="number" id="betAmount" class="BlackText" min="10" value="10"
-                       placeholder="token bet amount" required>
-            </label>
-            <label>Gains amount:
-                <input class="BlackText" type="number" id="gainsAmount" placeholder="calculate" readonly>
-            </label>
-            <button class="btn btn-sm btn-primary" id="btnBet" onclick="BetPlaced()" disabled>Bet</button>
-            </p>
-            <table id="Future"></table>
+            <h2 class="WhiteLink">Passed Bets</h2>
+            <table id="PassedBet" class="table">
+                <tr>
+                    <th>Amount</th>
+                    <th>Reward</th>
+                    <th>Game</th>
+                    <th>Location</th>
+                    <th>You were cheering for</th>
+                </tr>
+            </table>
         </div>
     </div>
 </div>

@@ -556,8 +556,6 @@ function BetPlaced()
     var txtAmount = document.getElementById("betAmount");
     var txtReward = document.getElementById("gainsAmount");
 
-    alert("Action=" + txtAmount.value + ";" + $data[1] + ";" + home + ";" + txtReward.value);
-
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", "/Client/PlaceBet", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -566,8 +564,114 @@ function BetPlaced()
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var result = xmlhttp.responseText;
-            alert(result);
         }
     }
 }
 
+function LoadBetInfo()
+{
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "/Client/BetInfoCurrent", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("");
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var result = xmlhttp.responseText;
+            FillCurrentBet(result);
+        }
+    }
+}
+
+function FillCurrentBet(data)
+{
+    var json = JSON.parse(data);
+    var amounts = json.map(function(item){
+        return item["Amount"];
+    });
+    var homes = json.map(function(item){
+        return item["home"];
+    });
+    var visitors = json.map(function(item){
+        return item["visitor"];
+    });
+    var locations = json.map(function(item){
+        return item["location"];
+    });
+    var isHome = json.map(function(item){
+        return item["Home"];
+    });
+    var rewards = json.map(function(item){
+        return item["Reward"];
+    });
+
+    var isPassed = json.map(function(item){
+    return item["Status"];
+    });
+    var betIds = json.map(function(item){
+        return item["Id"];
+    });
+
+    var tabCurrent = document.getElementById("CurrentBet");
+    var tabPassed = document.getElementById("PassedBet");
+    tabCurrent.innerHTML = "<tr><th>Amount</th><th>Reward</th><th>Game</th><th>Location</th><th>You are cheering for</th><th>Action</th></tr>";
+    tabPassed.innerHTML = "<tr><th>Amount</th><th>Reward</th><th>Game</th><th>Location</th><th>You are cheering for</th><th>Result</th></tr>";
+    for(var i = 0; i < amounts.length; i++)
+    {
+        var tr = document.createElement("tr");
+        var tdAmount = document.createElement("td");
+        tdAmount.appendChild(document.createTextNode(amounts[i]));
+        var tdReward = document.createElement("td");
+        tdReward.appendChild(document.createTextNode(rewards[i]));
+        var tdGame = document.createElement("td");
+        tdGame.appendChild(document.createTextNode(homes[i] + " VS " + visitors[i]));
+        var tdVisitor = document.createElement("td");
+        tdVisitor.appendChild(document.createTextNode(visitors[i]));
+        var tdLocation = document.createElement("td");
+        tdLocation.appendChild(document.createTextNode(locations[i]));
+        var tdIsVisitor= document.createElement("td");
+        if(isHome[i] == 1)
+            tdIsVisitor.appendChild(document.createTextNode("home"));
+        else
+            tdIsVisitor.appendChild(document.createTextNode("visitor"));
+        var tdButton = document.createElement("td");
+        var btnDel = document.createElement("button");
+        btnDel.setAttribute("class", "btn btn-xs btn-primary");
+        btnDel.setAttribute("onclick", "DeleteBet(" + betIds[i] + ")");
+        btnDel.appendChild(document.createTextNode("Delete Bet"));
+        tdButton.appendChild(btnDel)
+
+        tr.appendChild(tdAmount);
+        tr.appendChild(tdReward);
+        tr.appendChild(tdGame);
+        tr.appendChild(tdLocation);
+        tr.appendChild(tdIsVisitor);
+        if(isPassed[i] == 1) {
+            tr.appendChild(tdButton);
+            tabCurrent.appendChild(tr);
+        }
+        else {
+            var tdWat = document.createElement("td");
+            if(isPassed[i] == 0)
+                tdWat.appendChild(document.createTextNode("Won"));
+
+            tr.appendChild(tdWat);
+            tabPassed.appendChild(tr);
+        }
+    }
+}
+
+function DeleteBet(id)
+{
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "/Client/DeleteBet", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("Action=" + id);
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var result = xmlhttp.responseText;
+            LoadBetInfo();
+        }
+    }
+}
